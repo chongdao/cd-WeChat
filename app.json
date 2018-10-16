@@ -1,12 +1,38 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/myself/myself",
+    "pages/article/article"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "宠到",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "学 堂",
+        "iconPath": "/images/test.png",
+        "selectedIconPath": "/images/test.png"
+      },
+      {
+        "pagePath": "pages/article/article",
+        "text": "文 章",
+        "iconPath": "/images/test.png",
+        "selectedIconPath": "/images/test.png"
+      },
+      {
+        "pagePath": "pages/myself/myself",
+        "text": "我 的",
+        "iconPath": "/images/test.png",
+        "selectedIconPath": "/images/test.png"
+      }
+    ]
   }
 }
