@@ -50,7 +50,6 @@ function getUserInfo() {
 
 module.exports = {
   Promise, 
-  makeArray, 
   getUserInfo,
   get: requstGet, 
   post: requstPost, 

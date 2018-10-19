@@ -1,4 +1,5 @@
 /**index.wxss**/
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -18,4 +19,101 @@
 
 .usermotto {
   margin-top: 200px;
+}
+.archives-info {
+  margin: 20rpx;
+  background: #fff;
+  width: 710rpx;
+  padding: 20rpx 0;
+}
+.info-box {
+  width: 100%;
+  background: #fff;
+  padding: 20rpx 30rpx;
+  margin: 20rpx 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.info-box .title {
+  font-size: 32rpx;
+  color: #333;
+  padding: 10rpx 0;
+}
+.archives-info .ps {
+  font-size: 32rpx;
+  color: #aaa;
+  margin: 20rpx 0;
+}
+.ct {
+  text-align: center;
+}
+.add-btn {
+  width: auto;
+  height: 60rpx;
+  padding:0 30rpx;
+  border-radius: 50rpx;
+  display: inline-block;
+  line-height:60rpx;
+  font-size: 32rpx;
+  background: #666;
+  color: #fff;
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+}
+.no-lesson {
+  font-size: 36rpx;
+  color: #aaa;
+  padding: 20rpx 0;
+}
+.lesson-more {
+  font-size: 36rpx;
+  color: #666;
+  border-top: 1rpx solid #eee;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+}
+.more-info {
+  position: absolute;
+  top: 25rpx;
+  right: 30rpx;
+  font-size: 32rpx;
+  color: #aaa;
+}
+.lesson-item {
+  padding: 5rpx 0;
+}
+.series-item {
+  width: 660rpx;
+  background: #eee;
+  margin: 10rpx 0 20rpx;
+  padding: 20rpx;
+}
+.series-item .title {
+  color: #333;
+  font-size: 40rpx;
+}
+.series-item .desc {
+  color: #999;
+  font-size: 28rpx;
+}
+.series-item .ls-base {
+  margin-top: 30rpx;
+  color: #999;
+  font-size: 36rpx;
+}
+.plan-box {
+  display: flex;
+}
+.plan-item {
+  flex: 1;
+  margin: 20rpx;
+}
+.plan-item-img {
+  width: 100%;
+  height: 200rpx;
+  background: #ccc;
+}
+.plan-item-name, .plan-item-price {
+  font-size: 32rpx;
 }
