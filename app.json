@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/myself/myself",
-    "pages/article/article"
+    "pages/article/article",
+    "pages/lesson/lesson",
+    "pages/variety/variety"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,28 @@
+/* pages/lesson/lesson.wxss */
+.info-box {
+  width: 100%;
+  background: #fff;
+  padding: 20rpx 30rpx;
+  margin: 20rpx 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.series-item {
+  width: 660rpx;
+  background: #eee;
+  margin: 10rpx 0 20rpx;
+  padding: 20rpx;
+}
+.series-item .title {
+  color: #333;
+  font-size: 40rpx;
+}
+.series-item .desc {
+  color: #999;
+  font-size: 28rpx;
+}
+.series-item .ls-base {
+  margin-top: 30rpx;
+  color: #999;
+  font-size: 36rpx;
+}

@@ -1,2 +1,37 @@
 <!--pages/myself/myself.wxml-->
-<text>pages/myself/myself.wxml</text>
+<view class="container">
+  <view class="useinfo-box">
+    <image class="useinfo-icon" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <view class="useinfo-name">{{userInfo.nickName}}</view>
+  </view>
+  <view class="list-box">
+    <view class="list-item">
+      <view>我的课程</view>
+      <image class="go-icon"></image>
+    </view>
+    <view class="list-item">
+      <view>文章收藏</view>
+      <image class="go-icon"></image>
+    </view>
+    <view class="list-item">
+      <view>我的订单</view>
+      <image class="go-icon"></image>
+    </view>
+    <view class="list-item">
+      <view>宠物档案</view>
+      <image class="go-icon"></image>
+    </view>
+    <view class="list-item">
+      <view>我的通知</view>
+      <image class="go-icon"></image>
+    </view>
+    <view class="list-item">
+      <view>加群</view>
+      <image class="go-icon"></image>
+    </view>
+    <view class="list-item">
+      <view>意见反馈</view>
+      <image class="go-icon"></image>
+    </view>
+  </view>
+</view>

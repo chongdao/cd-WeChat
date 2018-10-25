@@ -1,1 +1,41 @@
 /* pages/myself/myself.wxss */
+.useinfo-box {
+  background: #fff;
+  padding: 30rpx 50rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+.useinfo-icon {
+  border-radius: 50rpx;
+  width: 110rpx;
+  height: 110rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.useinfo-name {
+  display: inline-block;
+  padding: 37rpx;
+  font-size: 36rpx;
+  color: #333;
+}
+.list-box {
+  margin-top: 30rpx;
+  background: #fff;
+  width: 100%;
+  padding: 35rpx 0;
+}
+.list-item {
+  padding: 35rpx 50rpx;
+  position: relative;
+  color: #333;
+  font-size: 36rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.go-icon{
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 30px;
+  right: 50px;
+}

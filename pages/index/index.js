@@ -12,9 +12,14 @@ Page({
     lessonList: [1, 2, 3]
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewLesson: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../lesson/lesson'
+    })
+  },
+  bindViewDossier: function () {
+    wx.navigateTo({
+      url: '../variety/variety'
     })
   },
   onLoad: function () {

@@ -10,21 +10,21 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view> -->
-  <view class="archives-info" wx:if="{{archivesList.length == 0}}">
+  <view class="archives-info" wx:if="{{archivesList.length == 0}}" bindtap="bindViewDossier">
       <view class="ct ps">点击添加宠物档案, 更多惊喜</view>
       <view class="ct ps">每天抚摸宠物, 可以让你们更亲密</view>
   </view>
   <view class='info-box'>
-    <button class="add-btn">添加</button>
+    <button class="add-btn" bindtap="bindViewLesson">添加</button>
     <view class="title">已参加课程</view>
     <view class="ct no-lesson" wx:if="{{lessonList.length == 0}}">暂无课程，请添加</view>
-    <view class='lesson-item' wx:for="{{lessonList}}"  wx:for-index="index" wx:for-item="item">{{item}}</view>
+    <view class='lesson-item' wx:for="{{lessonList}}" wx:key="key"  wx:for-index="index" wx:for-item="item">{{item}}</view>
     <view class="ct lesson-more" wx:if="{{lessonList.length > 2}}">查看更多</view>
   </view>
   <view class='info-box'>
     <view class="title">系列课程</view>
-    <view class="more-info">更多系列课程</view>
-    <view class='series-item' wx:for="{{lessonList}}"  wx:for-index="index" wx:for-item="item">
+    <view class="more-info" bindtap="bindViewLesson">更多系列课程</view>
+    <view class='series-item' wx:for="{{lessonList}}" wx:key="key"  wx:for-index="index" wx:for-item="item">
     <view class="title">范晖的基本素养——老范系列课程</view>
     <view class="desc">学会以后会让宠物更加有礼貌</view>
     <view class="desc">123 已学习</view>
@@ -35,7 +35,7 @@
     <view class="title">合适的训练</view>
     <view class="more-info">更多训练</view>
     <view class="plan-box">
-      <view class='plan-item' wx:for="{{lessonList}}"  wx:for-index="index" wx:for-item="item">
+      <view class='plan-item' wx:for="{{lessonList}}" wx:key="key" wx:for-index="index" wx:for-item="item">
       <image class="plan-item-img"></image>
       <view class='plan-item-name'>xx计划</view>
       <view class='plan-item-price'>{{item > 1 ? '¥1'+item : '免费'}}</view>

@@ -1,0 +1,27 @@
+<!--pages/variety/variety.wxml-->
+<view class='head flex alic borderbe0'>
+  <view class='flex justc alic box bgf ml10 borRad'>
+  <view class='flex justc alic box'>
+    <icon type="search" size="20" class='ml5 mr10'/>
+    <input placeholder='搜索' type='search' value='{{val}}' bindconfirm='search' class='{{focus?"flex1":"w"}}' bindfocus='setFocus' bindblur='setFocus'></input>
+  </view>
+  <image src='../img/say.png' class='ml5 mr10 say'></image>
+  </view>  
+</view>
+
+<view class='flex '>
+  <scroll-view class="flex1" scroll-y scroll-into-view="id{{toView}}" style='height:calc(100vh - 102rpx)'>
+    <block wx:for='{{list}}' wx:key='id'>
+      <view class='lh40 fz16 color9e ml10' id='id{{item.id}}'>{{item.title}}</view>
+      <view class='bgf fz14'>
+        <view class='flex alic borderbe0 ml10 pt15 pb15' wx:for='{{item.list}}' wx:key='i' wx:for-item='n' data-id='{{item.id}}' bindtap='checkedBack'>
+          <image src='{{n.src}}' class='img mr15'></image>
+          <text>{{n.name}}</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class='posFix right0 tc fz12 flex justsa colu' style='height:calc(100% - 102rpx)'>
+    <view wx:for='{{nav}}' bindtap='toView' data-i='{{index}}' wx:key='key'>{{item}}</view>
+  </view>
+</view>
