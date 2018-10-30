@@ -1,20 +1,22 @@
-// pages/article/article.js
+// pages/drill/drill.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    articleList: [1, 2, 3]
+    isbegin: false,
+    category: 'list',
+    drillList: [1, 2, 3, 4],
+    detailStep: [1, 2],
+    backimg: 'http://pic.qiantucdn.com/58pic/22/72/01/57c6578859e1e_1024.jpg'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '文章'
-    })
+
   },
 
   /**
@@ -65,10 +67,16 @@ Page({
   onShareAppMessage: function () {
 
   },
-  bindviewDetail: function (e) {
-    var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../articleDetail/articleDetail?id=' + id
+  changeCategory: function (e) {
+    console.log(122)
+    this.setData({
+      category: e.currentTarget.dataset.type
+    })
+  },
+  bindbeginStudy: function () {
+    // console.log(122)
+    this.setData({
+      isbegin: true,
     })
   }
 })

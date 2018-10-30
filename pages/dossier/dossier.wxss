@@ -1,0 +1,5 @@
+/* pages/dossier/dossier.wxss */
+.pet-img {
+  width: 160rpx;
+  height: 160rpx;
+}

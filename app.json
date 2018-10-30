@@ -5,7 +5,11 @@
     "pages/myself/myself",
     "pages/article/article",
     "pages/lesson/lesson",
-    "pages/variety/variety"
+    "pages/variety/variety",
+    "pages/dossier/dossier",
+    "pages/drill/drill",
+    "pages/lessonList/lessonList",
+    "pages/articleDetail/articleDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

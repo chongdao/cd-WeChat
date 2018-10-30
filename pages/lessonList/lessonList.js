@@ -1,20 +1,18 @@
-// pages/article/article.js
+// pages/lessonList/lessonList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    articleList: [1, 2, 3]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '文章'
-    })
+
   },
 
   /**
@@ -64,11 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  bindviewDetail: function (e) {
-    var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../articleDetail/articleDetail?id=' + id
-    })
   }
 })

@@ -19,7 +19,17 @@ Page({
   },
   bindViewDossier: function () {
     wx.navigateTo({
-      url: '../variety/variety'
+      url: '../dossier/dossier'
+    })
+  },
+  bindViewDrill: function () {
+    wx.navigateTo({
+      url: '../drill/drill'
+    })
+  },
+  bindViewLeslist: function () {
+    wx.navigateTo({
+      url: '../lessonList/lessonList'
     })
   },
   onLoad: function () {
@@ -51,7 +61,6 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

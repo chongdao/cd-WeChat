@@ -1,0 +1,83 @@
+<!--pages/dossier/dossier.wxml-->
+<view class="container">
+  <view class='bgf fz16 wd100'>
+      <view class='flex justc alic'>
+        <text class='flex1 tc '>宠物照片</text>
+        <view class='flex2 tc'>
+            <image class='pet-img' bindtap="uploadimg"></image>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>宠物昵称</text>
+        <view class='flex2'>
+            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>宠物昵称</text>
+        <view class='flex2'>
+            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>宠物品种</text>
+        <view class='flex2'>
+            <input class="input" name="name" disabled='disabled' placeholder="请选择您的宠物品种" bindtap="selectVariety"/>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>宠物性别</text>
+        <view class='flex2'>
+            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>宠物生日</text>
+        <view class='flex2'>
+            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>到家日期</text>
+        <view class='flex2'>
+            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>体重</text>
+        <view class='flex2'>
+            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>体高</text>
+        <view class='flex2'>
+            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>体长</text>
+        <view class='flex2'>
+            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>疫苗情况</text>
+        <view class='flex2'>
+            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>驱虫情况</text>
+        <view class='flex2'>
+            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
+        </view>
+      </view>
+      <view class='flex justc alic pt10 pb10 borderte0'>
+        <text class='flex1 tc '>绝育情况</text>
+        <view class='flex2'>
+            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
+        </view>
+      </view>
+  </view>
+</view>

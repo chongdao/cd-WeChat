@@ -1,0 +1,26 @@
+/* pages/lessonList/lessonList.wxss */
+.mt50 {
+  margin-top: 50rpx;
+}
+.bg-gray {
+  background: #eee;
+}
+.wd90 {
+  width: 90rpx;
+}
+.mx100 {
+  max-width: 120rpx;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 28rpx;
+  background: #eee;
+  text-align: center;
+} 
+.list-img {
+  width: 180rpx;
+  height: 250rpx;
+}
+.list-img image {
+   width: 100%;
+   height: 100%;
+}
