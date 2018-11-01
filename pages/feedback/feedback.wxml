@@ -1,0 +1,20 @@
+<!--pages/feedback/feedback.wxml-->
+<view class='container'>
+  <view class='col3 pt10 pl10 pr10 fz16 borBox wd100'>*问题和建议</view>
+  <textarea class='pl10 mt10 pt10 borBox pr10 pb10 bgf fz16'  placeholder='请输入您宝贵的意见' maxlength="1000"></textarea>
+  <view class='wd100 pt10 pl10 pr10 fz16 borBox  '>
+    <view>相关问题截图或照片</view>
+    <view class='flex mt10'>
+      <view class='item-img'></view>
+      <view class='item-img'></view>
+      <view class='item-img'></view>
+    </view>
+  </view>
+  <view class='wd100 pt10 pl10 pr10 fz16 borBox  '>
+  <view>手机号</view>
+  <view class='bgf pd5 mt10'>
+  <input class="input" name="" type='number' placeholder="留下手机号方便我们更好的联系你" bindinput=""/>
+  </view>
+  </view>
+  <view class='sub-btn'>提交反馈</view>
+</view>

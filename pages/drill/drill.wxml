@@ -4,6 +4,16 @@
     <view class='wd100 z100'>
       <view class='drill-title fz18 fw'>范晖的基本素养--老范系列课程</view>
       <view class='drill-num fz14'>123已参加</view>
+      <view class='flex wd100  pt5 borBox pl10 pr10 colf'>
+        <view class='flex1 pt5 pb5 fz14 tl'>训练</view>
+        <view class='flex1 pt5 pb5 fz14 tc'>平均</view>
+        <view class='flex1 pt5 pb5 fz14 tr'>难度</view>
+      </view>
+      <view class='flex wd100 pb5 borBox pl10 pr10 colf'>
+        <view class='flex1 pt5 pb5 fz14 tl'>3节</view>
+        <view class='flex1 pt5 pb5 fz14 tc'>20"</view>
+        <view class='flex1 pt5 pb5 fz14 tr'>基础</view>
+      </view>
       <button class='btn btn-dr' bindtap='bindbeginStudy'>开始学习</button>
     </view>
     <view class='dr-bgimg' style='background-image: url({{backimg}})'></view>
@@ -12,16 +22,7 @@
     <video style="width: 100%;height:425rpx;margin:1px;" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" binderror="videoErrorCallback"></video>
   </view>
   
-  <view class='flex wd100 bgf pt5 borBox pl10 pr10 col9'>
-    <view class='flex1 pt5 pb5 fz14'>训练</view>
-    <view class='flex1 pt5 pb5 fz14 tc'>平均</view>
-    <view class='flex1 pt5 pb5 fz14 tr'>难度</view>
-  </view>
-  <view class='flex wd100 bgf pb5 borBox pl10 pr10 col9'>
-    <view class='flex1 pt5 pb5 fz14'>3节</view>
-    <view class='flex1 pt5 pb5 fz14 tc'>20"</view>
-    <view class='flex1 pt5 pb5 fz14 tr'>基础</view>
-  </view>
+  
   <view class='flex wd100 pt15 pb15 bgf fw col3 fz16'>
     <view class='flex1 tr borBox pr100' data-type='list' bindtap='changeCategory'>
       <view class="inline pb5 {{category=='list'? 'dactive' : ''}}">目录</view>

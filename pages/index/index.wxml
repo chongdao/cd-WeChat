@@ -24,7 +24,7 @@
   <view class='info-box'>
     <view class="title">系列课程</view>
     <view class="more-info" bindtap="bindViewLesson">更多系列课程</view>
-    <view class='series-item' wx:for="{{lessonList}}" wx:key="key"  wx:for-index="index" wx:for-item="item" bindtap='bindViewDrill'>
+    <view class='series-item' wx:for="{{lessonList}}" wx:key="key"  wx:for-index="index" wx:for-item="item" bindtap='bindViewDrill' data-checked="{{index == 1}}">
     <view class="title">范晖的基本素养——老范系列课程</view>
     <view class="desc">学会以后会让宠物更加有礼貌</view>
     <view class="desc">123 已学习</view>

@@ -1,0 +1,21 @@
+/* pages/feedback/feedback.wxss */
+textarea {
+  width: 710rpx;
+}
+.item-img {
+  width: 180rpx;
+  height: 180rpx;
+  border: 2rpx solid #ccc;
+  background: #999;
+  margin-right: 20rpx;
+}
+.sub-btn {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  color: #333;
+  padding: 30rpx 0;
+  font-size: 32rpx;
+}

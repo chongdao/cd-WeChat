@@ -22,10 +22,17 @@ Page({
       url: '../dossier/dossier'
     })
   },
-  bindViewDrill: function () {
-    wx.navigateTo({
-      url: '../drill/drill'
-    })
+  bindViewDrill: function (e) {
+    if (e.currentTarget.dataset.checked) {
+      wx.navigateTo({
+        url: '../drill/drill'
+      })
+    }
+    else {
+      wx.navigateTo({
+        url: '../lessonDetail/lessonDetail'
+      })
+    }
   },
   bindViewLeslist: function () {
     wx.navigateTo({

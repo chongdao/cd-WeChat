@@ -9,7 +9,13 @@
     "pages/dossier/dossier",
     "pages/drill/drill",
     "pages/lessonList/lessonList",
-    "pages/articleDetail/articleDetail"
+    "pages/articleDetail/articleDetail",
+    "pages/mylesson/mylesson",
+    "pages/lessonDetail/lessonDetail",
+    "pages/orders/orders",
+    "pages/collectList/collectList",
+    "pages/notice/notice",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",

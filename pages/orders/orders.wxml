@@ -1,0 +1,21 @@
+<!--pages/orders/orders.wxml-->
+<view class="container">
+  <view class='flex pt20 pb15 fz16 col3 bgf wd100 tc'>
+    <view class='flex1' data-index='0' bindtap='changeTab'><text class='pb5 {{activeTab == 0 ? "active" : ""}}'>全部(3)</text></view>
+    <view class='flex1' data-index='1' bindtap='changeTab'><text class='pb5 {{activeTab == 1 ? "active" : ""}}'>已支付(2)</text></view>
+    <view class='flex1' data-index='2' bindtap='changeTab'><text class='pb5 {{activeTab == 2 ? "active" : ""}}'>未支付(1)</text></view>
+  </view>
+  <view class='pt15 pl20 pr20 borBox wd100 bgf posRel mb10'  wx:for="{{orderList}}" wx:key="key"  wx:for-index="index" wx:for-item="item">
+    <view class='col3 fz16'>课程</view>
+    <view class='mt20 flex pb15 borderbe0'>
+      <view class='or-img'></view>
+      <view class='ml15 col3  '>
+        <view>课程名称</view>
+        <view class='item-price'>¥68.00</view>
+      </view>
+    </view>
+    <view class='pt15 pb15 col3 fz16'>共计¥68.00</view>
+    <view class='item-status'>待支付</view>
+    <button class='btn item-pay'>去支付</button>
+  </view>
+</view>

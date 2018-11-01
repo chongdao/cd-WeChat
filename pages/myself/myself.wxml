@@ -6,19 +6,19 @@
   </view>
   <view class="list-box">
     <view class="list-item">
-      <view>我的课程</view>
+      <view bindtap='bindviewPage' data-page="mylesson">我的课程</view>
       <image class="go-icon"></image>
     </view>
     <view class="list-item">
-      <view>文章收藏</view>
+      <view bindtap='bindviewPage' data-page="collectList">文章收藏</view>
       <image class="go-icon"></image>
     </view>
     <view class="list-item">
-      <view>我的订单</view>
+      <view bindtap='bindviewPage' data-page="orders">我的订单</view>
       <image class="go-icon"></image>
     </view>
     <view class="list-item">
-      <view>宠物档案</view>
+      <view bindtap='bindviewPage' data-page="dossier">宠物档案</view>
       <image class="go-icon"></image>
     </view>
     <view class="list-item">
@@ -30,7 +30,7 @@
       <image class="go-icon"></image>
     </view>
     <view class="list-item">
-      <view>意见反馈</view>
+      <view bindtap='bindviewPage' data-page="feedback">意见反馈</view>
       <image class="go-icon"></image>
     </view>
   </view>
