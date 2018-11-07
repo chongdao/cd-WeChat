@@ -11,35 +11,62 @@
     <text class="user-motto">{{motto}}</text>
   </view> -->
   <view class="archives-info" wx:if="{{archivesList.length == 0}}" bindtap="bindViewDossier">
-      <view class="ct ps">点击添加宠物档案, 更多惊喜</view>
-      <view class="ct ps">每天抚摸宠物, 可以让你们更亲密</view>
+      <view class="tc ps">点击添加宠物档案, 更多惊喜</view>
+      <view class="tc ps">每天抚摸宠物, 可以让你们更亲密</view>
+  </view>
+  <view wx:if="{{archivesList.length !== 0}}" class='archives-info'>
+    <view class='flex posRel pl10'>
+      <view class='archives-info-img'></view>
+      <view class='ml10'>
+        <view class='fz16 col3'>
+          <text>王辣条小可爱</text>
+          <image class='icon-sex ml5'></image>
+        </view>
+        <view class='col9 fz12 mt5'>一年零七个月</view>
+      </view>
+      <view class='add-archives'>+添加档案</view>
+    </view>
+    <view class='tc pt10 pb10 col9 fz14'>大大大大大大大哥别杀我</view>
   </view>
   <view class='info-box'>
-    <button class="add-btn" bindtap="bindViewLesson">添加</button>
+    <button class="add-btn" bindtap="bindViewLesson">+ 添加</button>
     <view class="title">已参加课程</view>
     <view class="ct no-lesson" wx:if="{{lessonList.length == 0}}">暂无课程，请添加</view>
-    <view class='lesson-item' wx:for="{{lessonList}}" wx:key="key"  wx:for-index="index" wx:for-item="item">{{item}}</view>
+    <view class='lesson-item' wx:for="{{lessonList}}" wx:key="key"  wx:for-index="index" wx:for-item="item">
+      <view class='flex'>
+        <view class='lesson-item-title over'>成功的开端-良好的自我介绍</view>
+        <view class='fz12 colbe pr5 pt10'>14min基础</view>
+      </view>
+    </view>
     <view class="ct lesson-more" wx:if="{{lessonList.length > 2}}">查看更多</view>
   </view>
   <view class='info-box'>
     <view class="title">系列课程</view>
-    <view class="more-info" bindtap="bindViewLesson">更多系列课程</view>
-    <view class='series-item' wx:for="{{lessonList}}" wx:key="key"  wx:for-index="index" wx:for-item="item" bindtap='bindViewDrill' data-checked="{{index == 1}}">
-    <view class="title">范晖的基本素养——老范系列课程</view>
-    <view class="desc">学会以后会让宠物更加有礼貌</view>
-    <view class="desc">123 已学习</view>
+    <view class="more-info" bindtap="bindViewLesson">查看更多</view>
+  <view class='series-item' wx:for="{{lessonList}}" wx:key="key"  wx:for-index="index" wx:for-item="item" bindtap='bindViewDrill' data-checked="{{index == 1}}">
+    <view class='series-item-img'></view>
+    <view class='series-item-box'>
+      <view class="title">范晖的基本素养——老范系列课程</view>
+      <view class="desc">学会以后会让宠物更加有礼貌</view>
+    </view>
     <view class="desc ls-base">基础·5节课·平均15分钟</view>
     </view>
   </view>
-  <view class='info-box'>
+  <view class='info-box np'>
     <view class="title">合适的训练</view>
     <view class="more-info" bindtap='bindViewLeslist'>更多训练</view>
-    <view class="plan-box">
+    <scroll-view scroll-x="true" class='sv-box'>
+    <view  class="plan-box">
       <view class='plan-item' wx:for="{{lessonList}}" wx:key="key" wx:for-index="index" wx:for-item="item">
-      <image class="plan-item-img"></image>
-      <view class='plan-item-name'>xx计划</view>
+      <view  class="plan-item-box pl10">
+      <view class='fz16 colf mt10 wd100 borBox over'>狗狗乱咬东西</view>
+      <view class='fz12 colf mt5'>基础</view>
+      <view class='colf fz12 mt5'>15分钟</view>
       <view class='plan-item-price'>{{item > 1 ? '¥1'+item : '免费'}}</view>
      </view>
-    </view>
+     </view>
+     </view>
+    </scroll-view>
   </view>
+  <view class='pt20 pb20 colbe fz12 tc'>没有更多内容了</view>
 </view>

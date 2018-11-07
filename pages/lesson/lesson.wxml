@@ -1,10 +1,12 @@
 <!--pages/lesson/lesson.wxml-->
 <view class="container">
   <view class='info-box'>
-    <view class='series-item' wx:for="{{lessonList}}" wx:key="key"  wx:for-index="index" wx:for-item="item">
-    <view class="title">范晖的基本素养——老范系列课程</view>
-    <view class="desc">学会以后会让宠物更加有礼貌</view>
-    <view class="desc">123 已学习</view>
+   <view class='series-item' wx:for="{{lessonList}}" wx:key="key"  wx:for-index="index" wx:for-item="item" bindtap='bindViewDrill' data-checked="{{index == 1}}">
+    <view class='series-item-img'></view>
+    <view class='series-item-box'>
+      <view class="title">范晖的基本素养——老范系列课程</view>
+      <view class="desc">学会以后会让宠物更加有礼貌</view>
+    </view>
     <view class="desc ls-base">基础·5节课·平均15分钟</view>
     </view>
   </view>

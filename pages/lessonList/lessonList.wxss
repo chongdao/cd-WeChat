@@ -7,18 +7,20 @@
 }
 .wd90 {
   width: 90rpx;
+  line-height: 36rpx;
 }
 .mx100 {
   max-width: 120rpx;
-  font-size: 28rpx;
+  font-size: 20rpx;
   color: #666;
-  line-height: 28rpx;
-  background: #eee;
+  background: #EFEFEF;
+  border-radius: 4px;
   text-align: center;
+  padding: 8rpx 10rpx 6rpx;
 } 
 .list-img {
   width: 180rpx;
-  height: 250rpx;
+  height: 260rpx;
 }
 .list-img image {
    width: 100%;

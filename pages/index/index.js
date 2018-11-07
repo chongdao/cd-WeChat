@@ -8,7 +8,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    archivesList: [],
+    archivesList: [1],
     lessonList: [1, 2, 3]
   },
   //事件处理函数

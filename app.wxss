@@ -1,7 +1,7 @@
 /**app.wxss**/
 page {
   height: 100%;
-  background-color: #eee;
+  background-color: #f8f8f8;
 }
 .container {
   display: flex;
@@ -11,6 +11,7 @@ page {
   box-sizing: border-box;
 }
 .btn{display: inline-block; line-height: 1; font-size: 32rpx;}
+button::after {border: none;}
 .tc{text-align: center}
 .tr{text-align: right}
 .tl{text-align: left}
@@ -22,9 +23,11 @@ page {
 .fz16{font-size: 32rpx;}
 .fz14{font-size: 28rpx;}
 .fz12{font-size: 24rpx;}
+.fz10{font-size: 20rpx;}
 .col3{color: #333;}
 .col6{color: #666;}
 .col9{color: #999;}
+.colbe {color: #BEBEBE;}
 .colf{color: #fff}
 .fw{font-weight: 600;}
 .wd100{width: 100%;}

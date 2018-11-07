@@ -1,28 +1,50 @@
 /* pages/lesson/lesson.wxss */
 .info-box {
   width: 100%;
-  background: #fff;
-  padding: 20rpx 30rpx;
+  padding: 20rpx 20rpx;
   margin: 20rpx 0;
   box-sizing: border-box;
   position: relative;
 }
 .series-item {
-  width: 660rpx;
-  background: #eee;
-  margin: 10rpx 0 20rpx;
-  padding: 20rpx;
+  width: 710rpx;
+  height: 400rpx;
+  position: relative;
+  margin-top: 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.series-item-img {
+  width: 690rpx;
+  height: 320rpx;
+  border-radius: 10rpx;
+  background: #39E9D0;
+  overflow: hidden;
+}
+.series-item-box {
+  position: absolute;
+  bottom: 71rpx;
+  background: rgba(0,0,0,0.30);
+  height: 130rpx;
+  left: 10rpx;
+  right: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
 }
 .series-item .title {
-  color: #333;
-  font-size: 40rpx;
+  color: #fff;
+  font-size: 32rpx;
 }
 .series-item .desc {
-  color: #999;
-  font-size: 28rpx;
+  color: #f1f1f1;
+  font-size: 24rpx;
 }
 .series-item .ls-base {
-  margin-top: 30rpx;
-  color: #999;
-  font-size: 36rpx;
+  margin-top: 20rpx;
+  color: #BEBEBE;
+  font-size: 20rpx;
 }

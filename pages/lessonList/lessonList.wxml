@@ -1,20 +1,56 @@
 <!--pages/lessonList/lessonList.wxml-->
 <view class="container pt10 bgf">
-  <view class='flex pt20 pl20 pr20 pb20 borBox'>
+  <view class='flex pl15 pr15 mb10 borBox wd100'>
     <view class='list-img bg-gray'>
       <image></image>
     </view>
-    <view class='borBox pl20'>
-      <view class='col3 fz18'>有礼貌的问候</view>
-      <view class='col9 fz16 over mt5'>课程描述的文案，撑死一行</view>
-      <view class='mt5 flex'>
-        <view class='flex1 mr10 over pd5 mx100'>五个字撑死</view>
-        <view class='flex1 mr10 over pd5 mx100'>撑死</view>
-        <view class='flex1 over pd5 mx100'>撑死</view>
+    <view class='borBox pl20 flex1'>
+      <view class='col3 fz16'>有礼貌的问候</view>
+      <view class='col9 fz14 over mt5'>课程描述的文案，撑死一行</view>
+      <view class='fz10 colbe mt5'>4节课/234次学习</view>
+      <view class='mt10 flex'>
+        <view class='mr10 over  mx100'>五个字撑死</view>
+        <view class='mr10 over  mx100'>撑死</view>
+        <view class='over  mx100'>撑死</view>
       </view>
-      <view class='flex mt50'>
+      <view class='flex mt20'>
         <view class='fz18 col3 wd90'>¥12</view>
-        <view class='fz14 col9 pt5 pl10'>4节课/234次学习</view>
+      </view>
+    </view>
+  </view>
+  <view class='flex pl15 pr15 mb10 borBox wd100'>
+    <view class='list-img bg-gray'>
+      <image></image>
+    </view>
+    <view class='borBox pl20 flex1'>
+      <view class='col3 fz16'>有礼貌的问候</view>
+      <view class='col9 fz14 over mt5'>课程描述的文案，撑死一行</view>
+      <view class='fz10 colbe mt5'>4节课/234次学习</view>
+      <view class='mt10 flex'>
+        <view class='mr10 over  mx100'>五个字撑死</view>
+        <view class='mr10 over  mx100'>撑死</view>
+        <view class='over  mx100'>撑死</view>
+      </view>
+      <view class='flex mt20'>
+        <view class='fz18 col3 wd90'>¥12</view>
+      </view>
+    </view>
+  </view>
+  <view class='flex pl15 pr15 mb10 borBox wd100'>
+    <view class='list-img bg-gray'>
+      <image></image>
+    </view>
+    <view class='borBox pl20 flex1'>
+      <view class='col3 fz16'>有礼貌的问候</view>
+      <view class='col9 fz14 over mt5'>课程描述的文案，撑死一行</view>
+      <view class='fz10 colbe mt5'>4节课/234次学习</view>
+      <view class='mt10 flex'>
+        <view class='mr10 over  mx100'>五个字撑死</view>
+        <view class='mr10 over  mx100'>撑死</view>
+        <view class='over  mx100'>撑死</view>
+      </view>
+      <view class='flex mt20'>
+        <view class='fz18 col3 wd90'>¥12</view>
       </view>
     </view>
   </view>
