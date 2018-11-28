@@ -1,0 +1,17 @@
+/* pages/useinfo/useinfo.wxss */
+.user-top {
+  padding: 48rpx 0 44rpx;
+  background: #39E9D0;
+  font-size: 0;
+}
+.user-img {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 180rpx;
+}
+.user-name {
+  font-size: 24rpx;
+  color: #fff;
+  line-height: 24rpx;
+  margin-top: 16rpx;
+}

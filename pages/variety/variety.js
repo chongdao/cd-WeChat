@@ -14,19 +14,19 @@ Page({
         list: [
           { 
             name: '阿拉斯加', 
-            src: '', 
+            src: '/images/default.png', 
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
         ],
       },
@@ -36,19 +36,19 @@ Page({
         list: [
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
         ],
       },
@@ -58,19 +58,19 @@ Page({
         list: [
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
         ],
       },
@@ -80,19 +80,19 @@ Page({
         list: [
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
           {
             name: '阿拉斯加',
-            src: '',
+            src: '/images/default.png',
           },
         ],
       },

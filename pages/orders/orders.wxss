@@ -3,12 +3,12 @@
   border-bottom: 6rpx solid #333; 
 }
 .or-img {
-  width: 200rpx;
-  height: 150rpx;
+  width: 248rpx;
+  height: 160rpx;
   background: #eee;
 }
 .item-price {
-  margin-top: 56rpx;
+  margin-top: 54rpx;
 }
 .item-status {
   position: absolute;
@@ -18,12 +18,29 @@
   right: 40rpx;
 }
 .item-pay {
-  padding: 10rpx 30rpx;
+  padding: 16rpx 32rpx;
   border-radius: 50rpx;
-  color: #333;
+  color: #fff;
+  background: #39E9D0;
+  position: absolute;
+  right: 32rpx;
+  bottom: 16rpx;
+  font-size: 24rpx;
+}
+.item-cancel {
+  padding: 14rpx 30rpx;
+  border-radius: 50rpx;
+  color: #39E9D0;
   background: #fff;
   position: absolute;
-  right: 40rpx;
-  bottom: 20rpx;
-  border: 2rpx solid #333;
+  right: 212rpx;
+  bottom: 16rpx;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #39E9D0;
+}
+.lh16 {
+  line-height: 36rpx;
+  vertical-align:-2rpx;
+  margin-left: 4rpx;
 }

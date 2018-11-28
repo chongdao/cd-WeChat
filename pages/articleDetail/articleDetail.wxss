@@ -1,7 +1,14 @@
 /* pages/articleDetail/articleDetail.wxss */
 .top-img {
-  height: 425rpx;
+  height: 422rpx;
   background: #eee;
+}
+.top-img-icon {
+  position: absolute;
+  right: 36rpx;
+  top: 360rpx;
+  width: 38rpx;
+  height: 38rpx;
 }
 .wd120 {
   width: 150rpx;
@@ -21,4 +28,51 @@
   position: inherit;
   color: #999;
   display: initial;
+}
+.m16 {
+  margin-left: 32rpx;
+}
+.m7 {
+  margin-left: 14rpx;
+}
+.author-img {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 72rpx;
+}
+.author-info .name {
+  font-size: 30rpx;
+  line-height: 30rpx;
+  margin-bottom: 18rpx;
+}
+.author-info .subname {
+  line-height: 24rpx;
+}
+.collect-praise {
+  font-size: 0;
+  color: #00C8B7;
+  box-sizing: border-box;
+  padding: 42rpx;
+}
+.collect-count-icon {
+  width: 28rpx;
+  height: 22rpx;
+}
+.collect-praise-icon {
+  width: 24rpx;
+  height: 22rpx;
+}
+.collect-praise image {
+  display: inline-block;
+}
+.collect-praise view {
+  display: inline-block;
+  font-size: 24rpx;
+  padding: 4rpx 0;
+  line-height: 24rpx;
+}
+.content image{
+  margin: 20rpx 0;
+  width: 100%;
+  height: auto;
 }

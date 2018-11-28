@@ -1,5 +1,57 @@
 /* pages/dossier/dossier.wxss */
 .pet-img {
-  width: 160rpx;
-  height: 160rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+}
+.name-txt {
+  width: 288rpx;
+  font-size: 48rpx;
+  color: #000;
+}
+.p3 {
+  padding: 3rpx 0;
+}
+.h100 {
+  height: 100%;
+}
+.btn-sex {
+  width: 120rpx;
+  height: 44rpx;
+  overflow: hidden;
+  border-radius: 44rpx;
+  margin-right: 20rpx;
+}
+.btn-sex image {
+  width: 100%;
+  height: 100%;
+}
+.btn-dos {
+  width: 120rpx;
+  height: 44rpx;
+  overflow: hidden;
+  border-radius: 44rpx;
+  margin-right: 20rpx;
+  border: 2rpx solid #BEBEBE;
+  font-size: 24rpx;
+  color: #BEBEBE;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 42rpx;
+}
+.btn-dos.active {
+  background: #39E9D0;
+  border: 2rpx solid #39E9D0;
+  color: #fff;
+}
+.sub-btn {
+  text-align: center;
+  width: 686rpx;
+  background: #39E9D0;
+  border-radius: 48rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+  box-shadow: 0 20rpx 20rpx rgba(24, 248, 214, .2);
+  margin-top: 120rpx;
 }

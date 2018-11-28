@@ -7,7 +7,8 @@ Page({
   data: {
     isbegin: false,
     category: 'list',
-    drillList: [1, 2, 3, 4],
+    dataList: [1, 2, 3],
+    checkedStep: 0,
     detailStep: [1, 2],
     backimg: 'http://pic.qiantucdn.com/58pic/22/72/01/57c6578859e1e_1024.jpg'
   },
@@ -78,5 +79,11 @@ Page({
     this.setData({
       isbegin: true,
     })
-  }
+  },
+  slideToggle: function (e) {
+    let index = e.currentTarget.dataset.index;
+    this.setData({
+      checkedStep: index
+    })
+  },
 })

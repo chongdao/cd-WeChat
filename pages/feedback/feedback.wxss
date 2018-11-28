@@ -1,21 +1,63 @@
 /* pages/feedback/feedback.wxss */
 textarea {
-  width: 710rpx;
+  width: 686rpx;
+  background: #f4f4f4;
+}
+.mt12 {
+  margin-top: 24rpx;
+}
+.mt17 {
+  margin-top: 34rpx;
+}
+.m16 {
+  margin: 24rpx 32rpx 0;
+  width: 686rpx;
+  background: #f4f4f4;
+}
+.tel {
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.item-img.add {
+  border: 2rpx dashed #E5E5E5;
+  position: relative;
+}
+.add::after {
+  position: absolute;
+  content: '';
+  top: 40rpx;
+  left: 72rpx;
+  height: 68rpx;
+  width: 3rpx;
+  z-index: 99;
+  background: #cccccc;
+}
+.add::before {
+  content: '';
+  position: absolute;
+  top: 72rpx;
+  left: 40rpx;
+  width: 68rpx;
+  height: 3rpx;
+  z-index: 99;
+  background: #cccccc;
 }
 .item-img {
-  width: 180rpx;
-  height: 180rpx;
-  border: 2rpx solid #ccc;
-  background: #999;
+  width: 150rpx;
+  height: 150rpx;
   margin-right: 20rpx;
 }
 .sub-btn {
-  width: 100%;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  background: #fff;
-  color: #333;
-  padding: 30rpx 0;
-  font-size: 32rpx;
+  width: 686rpx;
+  background: #E8E8E8;
+  border-radius: 48rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+  margin-top: 80rpx;
+}
+.sub-btn.sub-ok {
+  background: #39E9D0;
+  box-shadow: 0 20rpx 20rpx rgba(24, 248, 214, .2);
 }

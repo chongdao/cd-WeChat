@@ -18,12 +18,14 @@ button::after {border: none;}
 .vm{vertical-align: middle;}
 .fl{float: left;}
 .fr{float: right;}
+.fz0{font-size: 0;}
 .fz24{font-size: 48rpx;}
 .fz18{font-size: 36rpx;}
 .fz16{font-size: 32rpx;}
 .fz14{font-size: 28rpx;}
 .fz12{font-size: 24rpx;}
 .fz10{font-size: 20rpx;}
+.col0{color: #000;}
 .col3{color: #333;}
 .col6{color: #666;}
 .col9{color: #999;}
@@ -70,11 +72,13 @@ button::after {border: none;}
 .pl5{padding-left: 10rpx;}
 .pl10{padding-left: 20rpx;}
 .pl15{padding-left: 30rpx;}
+.pl16{padding-left: 32rpx;}
 .pl20{padding-left: 40rpx;}
 
 .pr5{padding-right: 10rpx;}
 .pr10{padding-right: 20rpx;}
 .pr15{padding-right: 30rpx;}
+.pr16{padding-right: 32rpx;}
 .pr20{padding-right: 40rpx;}
 .bgf{background: #fff;}
 

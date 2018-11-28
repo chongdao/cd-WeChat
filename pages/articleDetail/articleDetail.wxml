@@ -1,18 +1,21 @@
-<view class="container bgf">
+<view class="container bgf posRel">
+  <image class='top-img-icon' src='/images/collect-no.png'></image>
   <image class='top-img wd100'></image>
-  <view class='flex pt5 pl15 pr15 borBox wd100'>
-    <view class='fz18 col3 flex1'>遛狗不栓绳子</view>
-    <view class='fz16 col9 tr flex1 flex borBox pt5'>
-      <view class='mr10 flex1' catchtap='onCollectionTap'>
-      <text wx:if="{{collected}}">收藏</text><text wx:else>已收藏</text>
-      </view>
-      <view><button class='ad-share-btn' data-name="shareBtn" open-type="share">分享</button></view>
+  <view class='pl16 pr16 mt10 borBox wd100'>这是个测试测试出测试当时的</view>
+  <view class='flex pl16 pr16 mt10 borBox wd100'>
+    <image class='author-img' src='/images/default.png'></image>
+    <view class='author-info flex1 pl10'>
+      <view class='col0 name'>宠到科技</view>
+      <view class='col9 fz12 subname'>微信公众号：宠到科技</view>
+    </view>
+    <view class='collect-praise'>
+      <image class='collect-count-icon' src='/images/collect-a.png'></image>
+      <view class='m7'>1123</view>
+      <image class='collect-praise-icon m16' src='/images/collect-a.png'></image>
+      <view class='m7'>454</view>
     </view>
   </view>
-  <view class='pl15 pr15 pt5 borBox wd100 col9 fz16'>时间:</view>
-  <view class='pl15 pr15 pt5 borBox wd100 col3 fz16'>目标</view>
-  <view class='col3 fz14 pl15 pr15 pt10 pb10'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</view>
-  <image class='center-img'></image>
-  <view class='pl15 pr15 pt5 borBox wd100 col3 fz16'>重点</view>
-  <view class='col3 fz14 pl15 pr15 pt10 pb10'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</view>
+  <view class='content fz16 pl16 mt10 pr16 borBox wd100 col3'>
+
+  </view>
 </view>

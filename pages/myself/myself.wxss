@@ -1,41 +1,59 @@
 /* pages/myself/myself.wxss */
 .useinfo-box {
-  background: #fff;
-  padding: 30rpx 50rpx;
+  background: #39E9D0;
+  padding: 20rpx 0 40rpx 32rpx;
   box-sizing: border-box;
   width: 100%;
+  position: relative;
 }
 .useinfo-icon {
-  border-radius: 50rpx;
-  width: 110rpx;
-  height: 110rpx;
+  border-radius: 130rpx;
+  width: 132rpx;
+  height: 132rpx;
   display: inline-block;
   vertical-align: middle;
 }
+.user-sex-icon {
+  position: absolute;
+  left: 128rpx;
+  top: 116rpx;
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 36rpx;
+}
 .useinfo-name {
   display: inline-block;
-  padding: 37rpx;
+  height: 132rpx;
+  line-height: 132rpx;
+  margin-left: 20rpx;
   font-size: 36rpx;
   color: #333;
 }
+.edit-icon {
+  display: inline-block;
+  width: 16rpx;
+  height: 16rpx;
+  background: #ccc;
+  margin-left: 18rpx;
+  margin-bottom: -4rpx;
+}
 .list-box {
-  margin-top: 30rpx;
   background: #fff;
   width: 100%;
-  padding: 35rpx 0;
 }
 .list-item {
-  padding: 35rpx 50rpx;
+  padding: 30rpx 50rpx;
   position: relative;
   color: #333;
   font-size: 36rpx;
   width: 100%;
   box-sizing: border-box;
+  border-bottom: 2rpx solid #EEEEEE;
 }
 .go-icon{
   position: absolute;
-  width: 36px;
-  height: 36px;
-  top: 30px;
-  right: 50px;
+  width: 28rpx;
+  height: 28rpx;
+  top: 38rpx;
+  right: 32rpx;
 }

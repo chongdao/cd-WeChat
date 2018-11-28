@@ -1,6 +1,7 @@
 <!--pages/myself/myself.wxml-->
 <view class="container">
   <view class="useinfo-box">
+    <image class='user-sex-icon' src='{{userInfo.gender==2 ? "/images/sex-xx.png" : "/images/sex-xy.png"}}'></image>
     <image class="useinfo-icon" src="{{userInfo.avatarUrl}}" mode="cover"></image>
     <view class="useinfo-name">{{userInfo.nickName}}</view>
   </view>
@@ -22,7 +23,7 @@
       <image class="go-icon"></image>
     </view>
     <view class="list-item">
-      <view>我的通知</view>
+      <view bindtap='bindviewPage' data-page="messageBox">我的消息</view>
       <image class="go-icon"></image>
     </view>
     <view class="list-item">

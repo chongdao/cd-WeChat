@@ -1,0 +1,7 @@
+<!--pages/useinfo/useinfo.wxml-->
+<view class="container">
+  <view class='wd100 tc user-top'>
+    <image class='user-img' src='{{userInfo.avatarUrl}}'></image>
+    <view class='user-name'>{{userInfo.nickName}}</view>
+  </view>
+</view>

@@ -10,12 +10,14 @@
     <view class='mt20 flex pb15 borderbe0'>
       <view class='or-img'></view>
       <view class='ml15 col3  '>
-        <view>课程名称</view>
-        <view class='item-price'>¥68.00</view>
+        <view class='col0 fz14'>课程名称</view>
+        <view class='fz10 col9'>3章15小节 永久有效</view>
+        <view class='item-price fz16 col6'>¥68.00</view>
       </view>
     </view>
-    <view class='pt15 pb15 col3 fz16'>共计¥68.00</view>
+    <view class='pt15 pb15 col6 fz12'>共计<view class='inline fz18 lh16'>¥68.00</view></view>
     <view class='item-status'>待支付</view>
-    <button class='btn item-pay'>去支付</button>
+    <button class='btn item-cancel'>取消订单</button>
+    <button class='btn item-pay'>立即支付</button>
   </view>
 </view>

@@ -1,13 +1,22 @@
 <!--pages/article/article.wxml-->
 <view class="container">
   <view class="article-box" wx:for="{{articleList}}" wx:key="key" wx:for-index="index" wx:for-item="item" bindtap='bindviewDetail' data-id="{{index+1}}">
-    <view class="article-title">熟悉狗笼——到家的基础</view>
+    <view class="article-title">
+      <view class='txts btf'>熟悉狗笼——到家的基础</view>
+      <view class='fz14 txts pd3'>系列文章</view>
+      <view class='fz12 txts'>2018.10.24</view>
+    </view>
     <view class="article-img"></view>
+    <view class='flex'>
     <view class="article-subtile">刚出生的狗仔到家怕生怎么破？不急，宠到君从传授</view>
-    <view class="article-tag">123 阅读 · 1123 收藏</view>
+    <view class='flex1'>
+      <image class='collect-icon' src="/images/collect-no.png"></image>
+    </view>
+    </view>
     <view class="article-author">
       <view class="article-author-img"></view>
       <view class="article-author-name">宠到</view>
+      <view class="article-tag">123 阅读 · 1123 · 收藏</view>
     </view>
   </view>
 </view>

@@ -1,11 +1,16 @@
 // pages/dossier/dossier.js
+var util = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    sex: 'gg',
+    vaccinum: 0,
+    anthelmintic: 0,
+    sterilization: 0,
+    brithday: util.formatDate(new Date())
   },
 
   /**
@@ -125,5 +130,29 @@ Page({
         })
       }
     });
+  },
+  bindDateChange: function (e) {
+    this.setData({
+      brithday: e.detail.value
+    })
+  },
+  bindCheckChange: function(e) {
+    let ty = e.currentTarget.dataset.type;
+    let inx = e.currentTarget.dataset.index;
+    if(ty == 'vc') {
+      this.setData({
+        vaccinum: inx
+      })
+    }
+    if (ty == 'an') {
+      this.setData({
+        anthelmintic: inx
+      })
+    }
+    if (ty == 'st') {
+      this.setData({
+        sterilization: inx
+      })
+    }
   }
 })

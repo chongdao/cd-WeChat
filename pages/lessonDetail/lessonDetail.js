@@ -6,6 +6,7 @@ Page({
    */
   data: {
     dataList: [1, 2, 3],
+    checkedStep: 0,
     backimg: 'http://pic.qiantucdn.com/58pic/22/72/01/57c6578859e1e_1024.jpg'
   },
 
@@ -63,5 +64,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  slideToggle: function (e) {
+    let index = e.currentTarget.dataset.index;
+    this.setData({
+      checkedStep: index
+    })
   }
 })

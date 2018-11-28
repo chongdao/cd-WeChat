@@ -2,17 +2,17 @@
 <view class='container'>
   <view class='top-box tc wd100' wx:if="{{!isbegin}}">
     <view class='wd100 z100'>
-      <view class='drill-title fz18 fw'>范晖的基本素养--老范系列课程</view>
-      <view class='drill-num fz14'>123已参加</view>
-      <view class='flex wd100  pt5 borBox pl10 pr10 colf'>
-        <view class='flex1 pt5 pb5 fz14 tl'>训练</view>
-        <view class='flex1 pt5 pb5 fz14 tc'>平均</view>
-        <view class='flex1 pt5 pb5 fz14 tr'>难度</view>
+      <view class='drill-title over fw'>范晖的基本素养--老范系列课程</view>
+      <view class='drill-num fz12'>123已参加</view>
+      <view class='flex wd100 borBox pl10 pr10 colf'>
+        <view class='flex1  pb5 fz12 tl'>训练</view>
+        <view class='flex1  pb5 fz12 tc'>平均</view>
+        <view class='flex1  pb5 fz12 tr'>难度</view>
       </view>
       <view class='flex wd100 pb5 borBox pl10 pr10 colf'>
-        <view class='flex1 pt5 pb5 fz14 tl'>3节</view>
-        <view class='flex1 pt5 pb5 fz14 tc'>20"</view>
-        <view class='flex1 pt5 pb5 fz14 tr'>基础</view>
+        <view class='flex1  pb5 fz16 tl'>3节</view>
+        <view class='flex1  pb5 fz16 tc'>20"</view>
+        <view class='flex1  pb5 fz16 tr'>基础</view>
       </view>
       <button class='btn btn-dr' bindtap='bindbeginStudy'>开始学习</button>
     </view>
@@ -25,24 +25,27 @@
   
   <view class='flex wd100 pt15 pb15 bgf fw col3 fz16'>
     <view class='flex1 tr borBox pr100' data-type='list' bindtap='changeCategory'>
-      <view class="inline pb5 {{category=='list'? 'dactive' : ''}}">目录</view>
+      <view class="inline pb3 {{category=='list'? 'dactive' : ''}}">目录</view>
     </view>
     <view class='flex1 tl borBox pl10' data-type='detail' bindtap='changeCategory'>
-      <view class="inline pb5 {{category=='detail'? 'dactive' : ''}}">详细步骤</view>
+      <view class="inline pb3 {{category=='detail'? 'dactive' : ''}}">详细步骤</view>
     </view>
   </view>
   <block wx:if="{{category=='list'}}" class=''>
-    <view class='borBox wd100 bgf'>
-      <view class='flex borBox pr20 pl20'>
-        <view class='flex1 pt10 pb10 fz16 fw'>社交</view>
+     <view class='borBox wd100 bgf mt15'>
+      <view class='flex borBox pr16 pl16'>
+        <view class='flex1 pt10 pb10 fz16 fw'>目录</view>
         <view class='flex1 tr pt10 pb10 fz16 fw '>3小节</view>
       </view>
-      <view class='flex borBox pr20 pl20 pt15 pb20' wx:for="{{drillList}}" wx:key="key"  wx:for-index="index" wx:for-item="item">
-        <view class='dr-item-img'></view>
+      <view class='mt8 borBox' wx:for="{{dataList}}" wx:key="key"  wx:for-index="index" wx:for-item="item">
+      <view data-index="{{index}}" bindtap='slideToggle' class='col0 fz14 posRel'>第一步：让狗狗提起兴趣 <image src="{{index==checkedStep ? '/images/right.png' : '/images/right.png'}}" class='up-icon'></image></view>
+      <view class='flex borBox pr16 pl16 mt8 pb20' wx:for="{{dataList}}" wx:key="key"  wx:for-index="dindex" wx:for-item="ditem"  wx:if="{{index==checkedStep}}">
+        <view class='item-img'></view>
         <view class='pl15 borBox col3 fz16' >
-          <view class='pt5 pb5'>跟第一次见面的人和平相处</view>
-          <view class='pt5 pb5'>20"</view>
+          <view class='pt5 pb5 fz14'>跟第一次见面的人和平相处</view>
+          <view class='pt5 pb5 fz14'>20"</view>
         </view>
+      </view>
       </view>
     </view>
   </block>

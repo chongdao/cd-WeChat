@@ -17,6 +17,10 @@ Page({
     wx.setNavigationBarTitle({
       title: '个人中心'
     })
+    wx.setNavigationBarColor({
+      frontColor: '#000000',
+      backgroundColor: '#39E9D0',
+    });
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo

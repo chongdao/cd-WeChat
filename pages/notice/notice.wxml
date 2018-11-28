@@ -1,2 +1,11 @@
 <!--pages/notice/notice.wxml-->
-<text>pages/notice/notice.wxml</text>
+<view class="container">
+  <view class='box flex' bindtap='bindviewPage' data-page="message" wx:for="{{noticeList}}" wx:key="key"  wx:for-index="index" wx:for-item="item">
+    <image class='icon-img' src='/images/icon-nt.png'></image>
+    <view class='flex1 p4 pl10'>
+      <view class='fz16 col0 p3'>通知</view>
+      <view class='fz14 col9 p3'>这是测试</view>
+    </view>
+    <image class='nt-img'></image>
+  </view>
+</view>

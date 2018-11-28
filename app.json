@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/myself/myself",
+    "pages/useinfo/useinfo",
     "pages/article/article",
     "pages/lesson/lesson",
     "pages/variety/variety",
@@ -15,6 +16,8 @@
     "pages/orders/orders",
     "pages/collectList/collectList",
     "pages/notice/notice",
+    "pages/message/message",
+    "pages/messageBox/messageBox",
     "pages/feedback/feedback"
   ],
   "window": {
@@ -29,21 +32,21 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "学 堂",
-        "iconPath": "/images/test.png",
-        "selectedIconPath": "/images/test.png"
+        "text": "首 页",
+        "iconPath": "/images/index.png",
+        "selectedIconPath": "/images/index-ck.png"
       },
       {
         "pagePath": "pages/article/article",
         "text": "文 章",
-        "iconPath": "/images/test.png",
-        "selectedIconPath": "/images/test.png"
+        "iconPath": "/images/article.png",
+        "selectedIconPath": "/images/article-ck.png"
       },
       {
         "pagePath": "pages/myself/myself",
         "text": "我 的",
-        "iconPath": "/images/test.png",
-        "selectedIconPath": "/images/test.png"
+        "iconPath": "/images/myself.png",
+        "selectedIconPath": "/images/myself-ck.png"
       }
     ]
   }
