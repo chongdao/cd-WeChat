@@ -15,17 +15,11 @@ Page({
       var postId = options.id;
       this.data.currentPostId = postId;
       var postsCollected = wx.getStorageSync('posts_collected');
-      if (postsCollected) {
-        console.log(postsCollected[postId])
-        var post_collected = postsCollected[postId];
+      var post_collected = postsCollected[postId];
+      if (post_collected) {
         this.setData({
           collected: post_collected
         })
-      }
-      else {
-        var postsCollected = {}
-        postsCollected[postId] = true;
-        wx.setStorageSync('posts_collected', postsCollected);
       }
   },
   onCollectionTap: function () {

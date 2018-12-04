@@ -90,7 +90,18 @@ Page({
     })
 
   },
-
+  bindViewDrill: function (e) {
+    if (e.currentTarget.dataset.checked) {
+      wx.navigateTo({
+        url: '../drill/drill'
+      })
+    }
+    else {
+      wx.navigateTo({
+        url: '../lessonDetail/lessonDetail'
+      })
+    }
+  },
 
   /**
    * 用户点击右上角分享
