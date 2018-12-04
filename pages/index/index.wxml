@@ -54,7 +54,7 @@
     <scroll-view scroll-x="true" class='sv-box'>
       <view class="plan-box">
         <view class='plan-item' wx:for="{{userLessons}}" wx:key="key">
-          <view class="plan-item-box pl10">
+          <view class="plan-item-box pl10" bindtap='bindViewLessonDetail'>
             <view class='fz16 colf mt10 wd100 borBox over'>狗狗乱咬东西</view>
             <view class='fz12 colf mt5'>基础</view>
             <view class='colf fz12 mt5'>15分钟</view>

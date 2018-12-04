@@ -9,7 +9,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     archivesList: [1],
-    
+
     // 用户课程
     userLessons: [{
         "id": "11",
@@ -140,6 +140,12 @@ Page({
   bindViewLesson: function() {
     wx.navigateTo({
       url: '../lesson/lesson'
+    })
+  },
+  // 课程详情-训练
+  bindViewLessonDetail: function() {
+    wx.navigateTo({
+      url: '../lessonDetail/lessonDetail',
     })
   },
   bindViewDossier: function() {
