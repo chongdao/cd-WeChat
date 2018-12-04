@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+var http = require('../../utils/http.js');
 
 Page({
   data: {
@@ -140,12 +141,6 @@ Page({
   bindViewLesson: function() {
     wx.navigateTo({
       url: '../lesson/lesson'
-    })
-  },
-  // 课程详情-训练
-  bindViewLessonDetail: function() {
-    wx.navigateTo({
-      url: '../lessonDetail/lessonDetail',
     })
   },
   bindViewDossier: function() {

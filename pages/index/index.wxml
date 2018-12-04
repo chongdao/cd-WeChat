@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">  
-   <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
   </view>
   <view class="archives-info" wx:if="{{archivesList.length == 0}}" bindtap="bindViewDossier">
     <view class="tc ps">点击添加宠物档案, 更多惊喜</view>
@@ -17,7 +17,7 @@
         </view>
         <view class='col9 fz12 mt5'>一年零七个月</view>
       </view>
-      <view class='add-archives'>+添加档案</view>
+      <view class='add-archives' bindtap='bindViewDossier'>+添加档案</view>
     </view>
     <view class='tc pt10 pb10 col9 fz14'>大大大大大大大哥别杀我</view>
   </view>
@@ -28,11 +28,15 @@
     <view class="ct no-lesson" wx:if="{{userLessons.length == 0}}">暂无课程，请添加</view>
     <view class='lesson-item' wx:for="{{userLessons}}" wx:key="id">
       <view class='flex'>
-        <view class='lesson-item-title over'>{{item.courseTitle + '-' + item.courseName}}</view>
+        <view class='lesson-item-title over' bindtap='bindViewDrill'>
+          {{item.courseTitle + '-' + item.courseName}}
+        </view>
         <view class='fz12 colbe pr5 pt10'>{{item.courseLengthTime + 'min'}}</view>
       </view>
     </view>
-    <view class="ct lesson-more" wx:if="{{userLessons.length > 2}}">查看更多</view>
+    <view class="ct lesson-more" wx:if="{{userLessons.length > 2}}" bindtap='bindViewLesson'>
+      查看更多
+    </view>
   </view>
 
   <view class='info-box'>
@@ -54,7 +58,7 @@
     <scroll-view scroll-x="true" class='sv-box'>
       <view class="plan-box">
         <view class='plan-item' wx:for="{{userLessons}}" wx:key="key">
-          <view class="plan-item-box pl10" bindtap='bindViewLessonDetail'>
+          <view class="plan-item-box pl10" bindtap='bindViewDrill'>
             <view class='fz16 colf mt10 wd100 borBox over'>狗狗乱咬东西</view>
             <view class='fz12 colf mt5'>基础</view>
             <view class='colf fz12 mt5'>15分钟</view>
