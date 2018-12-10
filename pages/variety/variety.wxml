@@ -11,7 +11,7 @@
     <block wx:for='{{list}}' wx:key='id'>
       <view class='lh40 fz14 color9e ml10' id='id{{item.id}}'>{{item.title}}</view>
       <view class='bgf fz14'>
-        <view class='flex alic borderbe0  pt15 pb15' wx:for='{{item.list}}' wx:key='i' wx:for-item='n' data-id='{{item.id}}' bindtap='checkedBack'>
+        <view class='flex alic borderbe0  pt15 pb15' wx:for='{{item.list}}' wx:key='i' wx:for-item='n' data-id='{{n.id}}' bindtap='checkedBack' data-name='{{n.name}}'>
           <image src='{{n.src}}' class='img mr10'></image>
           <text>{{n.name}}</text>
         </view>

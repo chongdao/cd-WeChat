@@ -13,18 +13,22 @@ Page({
         title: '热门品种', 
         list: [
           { 
-            name: '阿拉斯加', 
+            name: '阿拉斯加',
+            id: 123,
             src: '/images/default.png', 
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
@@ -35,18 +39,22 @@ Page({
         title: 'A',
         list: [
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
@@ -57,18 +65,22 @@ Page({
         title: 'B',
         list: [
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
@@ -79,18 +91,22 @@ Page({
         title: 'C',
         list: [
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
           {
+            id: 123,
             name: '阿拉斯加',
             src: '/images/default.png',
           },
@@ -172,8 +188,15 @@ Page({
     })
   },
   checkedBack: function (e) {
-    wx.navigateTo({
-      url: '' + e.currentTarget.dataset.id,
-    })
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];   //当前页面
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    prevPage.setData({
+      variety: {
+        id: e.currentTarget.dataset.id,
+        name: e.currentTarget.dataset.name
+      }
+    });
+    wx.navigateBack();
   }
 })

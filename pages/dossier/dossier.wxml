@@ -21,7 +21,7 @@
       <view class='flex justc alic pt10 pb10 p3'>
         <text class='fz16 col3'>宠物品种:</text>
         <view class='pl20 flex1'>
-            <input class="input" name="name" disabled='disabled' placeholder="请选择您的宠物品种" bindtap="selectVariety"/>
+            <input class="input" name="name" disabled='disabled' value='{{variety.name}}' placeholder="请选择您的宠物品种" bindtap="selectVariety"/>
         </view>
       </view>
       

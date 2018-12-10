@@ -10,6 +10,7 @@ Page({
     vaccinum: 0,
     anthelmintic: 0,
     sterilization: 0,
+    variety: {id:12, name:'哈士奇'},
     brithday: util.formatDate(new Date())
   },
 
