@@ -72,7 +72,7 @@
           <view bindtap='bindCheckChange'  data-type='st'  data-index='1'  class='btn btn-dos {{sterilization==1 ? "active" : ""}}'>已绝育</view>
         </view>
       </view>
-      <view class='sub-btn'>提交</view>
+      <view class='sub-btn' bindtap='submit'>提交</view>
   </view>
   
 </view>

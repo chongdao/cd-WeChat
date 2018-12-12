@@ -191,6 +191,22 @@ Page({
         }
       })
     }
+
+    // 获取用户已参加课程
+    // http.get('/ipet/course/subscribeCourse.json').then(r => {
+    //   this.setData({
+    //     userLessons: r.courseListInfo
+    //   })
+    // })
+
+    // 获取系列课程
+    // http.get('/ipet/course/queryCourse.json', {
+    //   courseType: '1'
+    // }).then(r => {
+    //   this.setData({
+    //     seriesLessons: r.courseListInfo
+    //   })
+    // })
   },
   getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo

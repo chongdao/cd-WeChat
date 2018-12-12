@@ -1,5 +1,6 @@
 // pages/dossier/dossier.js
 var util = require('../../utils/util.js');
+let http = require('../../utils/http.js')
 Page({
 
   /**
@@ -10,76 +11,79 @@ Page({
     vaccinum: 0,
     anthelmintic: 0,
     sterilization: 0,
-    variety: {id:12, name:'哈士奇'},
+    variety: {
+      id: 12,
+      name: '哈士奇'
+    },
     brithday: util.formatDate(new Date())
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  selectVariety: function () {
+  selectVariety: function() {
     wx.navigateTo({
       url: '../variety/variety'
     })
   },
-  uploadimg: function () {
+  uploadimg: function() {
     var that = this;
     wx.showActionSheet({
       itemList: ["从相册中选择", "拍照"],
       itemColor: "#f7982a",
-      success: function (res) {
+      success: function(res) {
         if (!res.cancel) {
           if (res.tapIndex == 0) {
             that.chooseWxImage("album");
@@ -90,19 +94,19 @@ Page({
       }
     })
   },
-  chooseWxImage: function (type) {
+  chooseWxImage: function(type) {
     var that = this;
     wx.chooseImage({
       count: 1,
       sizeType: ["original", "compressed"],
       sourceType: [type],
-      success: function (res) {
+      success: function(res) {
         var addimg = res.tempFilePaths;
         that.upload(addimg[0]);
       }
     })
   },
-  upload: function (img) {
+  upload: function(img) {
     wx.showToast({
       title: '正在上传...',
       icon: 'loading',
@@ -110,7 +114,7 @@ Page({
       duration: 10000
     })
     wx.uploadFile({
-      url: '',
+      url: '/ipet/petInfo/upLoadPetImage.json',
       filePath: img,
       name: 'uploadfile_ant',
       formData: {
@@ -119,20 +123,19 @@ Page({
       header: {
         "Content-Type": "multipart/form-data"
       },
-      success: function (res) {
-      },
-      fail: function (res) {
+      success: function(res) {},
+      fail: function(res) {
         wx.hideToast();
         wx.showModal({
           title: '错误提示',
           content: '上传图片失败',
           showCancel: false,
-          success: function (res) { }
+          success: function(res) {}
         })
       }
     });
   },
-  bindDateChange: function (e) {
+  bindDateChange: function(e) {
     this.setData({
       brithday: e.detail.value
     })
@@ -140,7 +143,7 @@ Page({
   bindCheckChange: function(e) {
     let ty = e.currentTarget.dataset.type;
     let inx = e.currentTarget.dataset.index;
-    if(ty == 'vc') {
+    if (ty == 'vc') {
       this.setData({
         vaccinum: inx
       })
@@ -155,5 +158,27 @@ Page({
         sterilization: inx
       })
     }
+  },
+
+  /**
+   * 提交
+   */
+  submit() {
+
+    http.post('/ipet/petInfo/upLoadPetInfo.json', {
+      "petName": "豆豆",
+      "petType": "11",
+      "petSex": "1",
+      "petBrithday": "2000-06-11",
+      "homeDay": "2000-07-11",
+      "petWeight": "20",
+      "petHeight": "40",
+      "petLength": "60",
+      "anthelminticCondition": "1",
+      "sterilizationCondition": "1",
+      "vaccineCondition": "1"
+    }).then(r => {
+
+    })
   }
 })
