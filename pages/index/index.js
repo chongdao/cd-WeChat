@@ -3,6 +3,8 @@
 const app = getApp()
 var http = require('../../utils/http.js');
 
+let api_lesson = require('../../utils/api/lesson.js')
+
 Page({
   data: {
     motto: 'Hello World',
@@ -11,131 +13,11 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     archivesList: [1],
 
-    // 用户课程
-    userLessons: [{
-        "id": "11",
-        "courseName": "狗狗学做饭-1",
-        "courseTitle": "做饭",
-        "courseLengthTime": "15",
-        "courseType": "2",
-        "courseDesc": "狗狗学做饭",
-        "courseLabel": "做饭",
-        "courseCost": "20",
-        "courseImage": "FASLAJSDIUQWHDKJASHDKJASDASD",
-        "saleState": "1",
-        "courseOrder": "1000",
-        "trainerInfo": "范辉",
-        "level": "3",
-        "learningStep": "不知道",
-        "learningTimes": "11",
-        "JoinerCount": "1100",
-        "creatTime": "2018-06-15",
-        "creater": "范辉"
-      },
-      {
-        "id": "12",
-        "courseName": "狗狗学做饭-2",
-        "courseTitle": "做饭",
-        "courseLengthTime": "10",
-        "courseType": "2",
-        "courseDesc": "狗狗学做饭",
-        "courseLabel": "做饭",
-        "courseCost": "20",
-        "courseImage": "FASLAJSDIUQWHDKJASHDKJASDASD",
-        "saleState": "1",
-        "courseOrder": "1000",
-        "trainerInfo": "范辉",
-        "level": "3",
-        "learningStep": "不知道",
-        "learningTimes": "11",
-        "JoinerCount": "1100",
-        "creatTime": "2018-06-15",
-        "creater": "范辉"
-      },
-      {
-        "id": "13",
-        "courseName": "狗狗学做饭-3",
-        "courseTitle": "做饭",
-        "courseLengthTime": "20",
-        "courseType": "2",
-        "courseDesc": "狗狗学做饭",
-        "courseLabel": "做饭",
-        "courseCost": "20",
-        "courseImage": "FASLAJSDIUQWHDKJASHDKJASDASD",
-        "saleState": "1",
-        "courseOrder": "1000",
-        "trainerInfo": "范辉",
-        "level": "3",
-        "learningStep": "不知道",
-        "learningTimes": "11",
-        "JoinerCount": "1100",
-        "creatTime": "2018-06-15",
-        "creater": "范辉"
-      }
-    ],
+    // 用户参加的课程
+    userLessons: [],
 
     // 系列课程
-    seriesLessons: [{
-        "id": "11",
-        "courseName": "狗狗学做饭",
-        "courseTitle": "做饭",
-        "courseLengthTime": "15",
-        "courseType": "2",
-        "courseDesc": "狗狗学做饭",
-        "courseLabel": "做饭",
-        "courseCost": "20",
-        "courseImage": "FASLAJSDIUQWHDKJASHDKJASDASD",
-        "saleState": "1",
-        "courseOrder": "1000",
-        "trainerInfo": "范辉",
-        "level": "3",
-        "learningStep": "不知道",
-        "learningTimes": "11",
-        "JoinerCount": "1100",
-        "creatTime": "2018-06-15",
-        "creater": "范辉"
-      },
-      {
-        "id": "12",
-        "courseName": "狗狗学做饭",
-        "courseTitle": "做饭",
-        "courseLengthTime": "15",
-        "courseType": "2",
-        "courseDesc": "狗狗学做饭",
-        "courseLabel": "做饭",
-        "courseCost": "20",
-        "courseImage": "FASLAJSDIUQWHDKJASHDKJASDASD",
-        "saleState": "1",
-        "courseOrder": "1000",
-        "trainerInfo": "范辉",
-        "level": "3",
-        "learningStep": "不知道",
-        "learningTimes": "11",
-        "JoinerCount": "1100",
-        "creatTime": "2018-06-15",
-        "creater": "范辉"
-      },
-      {
-        "id": "13",
-        "courseName": "狗狗学做饭",
-        "courseTitle": "做饭",
-        "courseLengthTime": "15",
-        "courseType": "2",
-        "courseDesc": "狗狗学做饭",
-        "courseLabel": "做饭",
-        "courseCost": "20",
-        "courseImage": "FASLAJSDIUQWHDKJASHDKJASDASD",
-        "saleState": "1",
-        "courseOrder": "1000",
-        "trainerInfo": "范辉",
-        "level": "3",
-        "learningStep": "不知道",
-        "learningTimes": "11",
-        "JoinerCount": "1100",
-        "creatTime": "2018-06-15",
-        "creater": "范辉"
-      }
-    ]
+    seriesLessons: []
   },
   //事件处理函数
   bindViewLesson: function() {
@@ -193,20 +75,18 @@ Page({
     }
 
     // 获取用户已参加课程
-    // http.get('/ipet/course/subscribeCourse.json').then(r => {
-    //   this.setData({
-    //     userLessons: r.courseListInfo
-    //   })
-    // })
+    api_lesson.getUserLesson().then(r => {
+      this.setData({
+        userLessons: r.data.courseInfoList
+      })
+    })
 
     // 获取系列课程
-    // http.get('/ipet/course/queryCourse.json', {
-    //   courseType: '1'
-    // }).then(r => {
-    //   this.setData({
-    //     seriesLessons: r.courseListInfo
-    //   })
-    // })
+    api_lesson.getSerialLesson().then(r => {
+      this.setData({
+        seriesLessons: r.data.courseInfoList
+      })
+    })
   },
   getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo

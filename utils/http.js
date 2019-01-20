@@ -1,4 +1,5 @@
 var Promise = require('../libs/es6-promise.min');
+let host = 'http://kairuida.net.cn/dpet-core';
 
 function requstGet(url, data) {
   return requst(url, 'GET', data)
@@ -14,15 +15,17 @@ function requst(url, method, data = {}) {
   data.method = method
   return new Promise((resove, reject) => {
     wx.request({
-      url: url,
+      url: host + url,
       data: data,
-      header: {},
+      header: {
+        'x-auth-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Nzc2MzUyMDAwMDAsInVzZXJfaW5mbyI6IntcImlkXCI6XCIxMjM0NTZcIixcInByb3ZpZGVyS2V5XCI6XCJhc2Rhc2RcIixcInJvbGVfa2V5XCI6XCIxMTAyXCJ9In0.0a2_sMVAbtDGXyIotG7IiHBJRqZtgijqiRNrd-jBVk0'
+      },
       method: method.toUpperCase(), // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      success: function (res) {
+      success: function(res) {
         wx.hideNavigationBarLoading()
         resove(res.data)
       },
-      fail: function (msg) {
+      fail: function(msg) {
         console.log('reqest error', msg)
         wx.hideNavigationBarLoading()
         reject('fail')
@@ -49,9 +52,9 @@ function getUserInfo() {
 }
 
 module.exports = {
-  Promise, 
+  Promise,
   getUserInfo,
-  get: requstGet, 
-  post: requstPost, 
+  get: requstGet,
+  post: requstPost,
   requst
 }

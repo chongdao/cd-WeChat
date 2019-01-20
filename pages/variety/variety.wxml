@@ -10,16 +10,16 @@
 <view class='flex pl16 pr16 bgf'>
   <scroll-view class="flex1" scroll-y scroll-into-view="id{{toView}}" style='height:calc(100vh - 102rpx)'>
     <block wx:for='{{list}}' wx:key='id'>
-      <view class='lh40 fz14 color9e ml10' id='id{{item.id}}'>{{item.title}}</view>
+      <!-- <view class='lh40 fz14 color9e ml10' id='id{{item.id}}'>{{item.petTypeName}}</view> -->
       <view class='bgf fz14'>
-        <view class='flex alic borderbe0  pt15 pb15' wx:for='{{item.list}}' wx:key='i' wx:for-item='n' data-id='{{n.id}}' bindtap='checkedBack' data-name='{{n.name}}'>
-          <image src='{{n.src}}' class='img mr10'></image>
-          <text>{{n.name}}</text>
+        <view class='flex alic borderbe0  pt15 pb15' data-id='{{item.id}}' data-name='{{item.petTypeName}}' bindtap='checkedBack'>
+          <!-- <image src='{{n.src}}' class='img mr10'></image> -->
+          <text>{{item.petTypeName}}</text>
         </view>
       </view>
     </block>
   </scroll-view>
-  <view class='posFix right16 tc fz12 flex justsa colu' style='height:calc(100% - 102rpx)'>
+  <!-- <view class='posFix right16 tc fz12 flex justsa colu' style='height:calc(100% - 102rpx)'>
     <view wx:for='{{nav}}' bindtap='toView' class='{{toView == index+2 ? "active" : ""}}' data-i='{{index}}' wx:key='key'>{{item}}</view>
-  </view>
+  </view> -->
 </view>

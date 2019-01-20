@@ -1,21 +1,29 @@
 // pages/dossier/dossier.js
 var util = require('../../utils/util.js');
-let http = require('../../utils/http.js')
+let api = require('../../utils/api/pet.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    name: '',
     sex: 'gg',
     vaccinum: 0,
     anthelmintic: 0,
     sterilization: 0,
+
+    // 宠物品种
     variety: {
-      id: 12,
-      name: '哈士奇'
+      id: '',
+      name: ''
     },
-    brithday: util.formatDate(new Date())
+    brithday: util.formatDate(new Date()),
+    homeday: util.formatDate(new Date()),
+    "petWeight": '',
+    "petHeight": '',
+    "petLength": '',
   },
 
   /**
@@ -140,6 +148,11 @@ Page({
       brithday: e.detail.value
     })
   },
+  bindChangeHomeday(e) {
+    this.setData({
+      homeday: e.detail.value
+    })
+  },
   bindCheckChange: function(e) {
     let ty = e.currentTarget.dataset.type;
     let inx = e.currentTarget.dataset.index;
@@ -159,26 +172,55 @@ Page({
       })
     }
   },
+  bindChangeName(e) {
+    this.setData({
+      name: e.detail.value
+    })
+  },
+  bindChangeSex(e) {
+    this.setData({
+      sex: e.currentTarget.dataset.sex
+    })
+  },
+  bindChangeWeight(e) {
+    this.setData({
+      petWeight: e.detail.value
+    })
+  },
+  bindChangeHeight(e) {
+    this.setData({
+      petHeight: e.detail.value
+    })
+  },
+  bindChangeLength(e) {
+    this.setData({
+      petLength: e.detail.value
+    })
+  },
 
   /**
    * 提交
    */
   submit() {
-
-    http.post('/ipet/petInfo/upLoadPetInfo.json', {
-      "petName": "豆豆",
-      "petType": "11",
-      "petSex": "1",
-      "petBrithday": "2000-06-11",
-      "homeDay": "2000-07-11",
-      "petWeight": "20",
-      "petHeight": "40",
-      "petLength": "60",
-      "anthelminticCondition": "1",
-      "sterilizationCondition": "1",
-      "vaccineCondition": "1"
-    }).then(r => {
-
+    let pet = {
+      "petName": this.data.name,
+      "petType": this.data.variety.id,
+      "petSex": this.data.sex == 'gg' ? 1 : 2,
+      "petBrithday": this.data.brithday,
+      "homeDay": this.data.homeday,
+      "petWeight": this.data.petWeight,
+      "petHeight": this.data.petHeight,
+      "petLength": this.data.petLength,
+      "anthelminticCondition": this.data.anthelmintic,
+      "sterilizationCondition": this.data.sterilization,
+      "vaccineCondition": this.data.vaccinum
+    };
+    api.uploadInfo(pet).then(r => {
+      wx.showToast({
+        title: r.message,
+        icon: r.message === '操作成功' ? 'success' : 'error',
+        duration: 2000
+      })
     })
   }
 })
