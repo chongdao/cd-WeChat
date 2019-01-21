@@ -31,7 +31,7 @@
         <view class='lesson-item-title over' bindtap='bindViewDrill'>
           {{item.courseTitle + '-' + item.courseName}}
         </view>
-        <view class='fz12 colbe pr5 pt10'>{{item.courseLengthTime + 'min'}}</view>
+        <view class='fz12 colbe pr5 pt10'>{{ item.courseLengthTime }}min</view>
       </view>
     </view>
     <view class="ct lesson-more" wx:if="{{userLessons.length > 2}}" bindtap='bindViewLesson'>

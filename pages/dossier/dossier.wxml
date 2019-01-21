@@ -1,78 +1,88 @@
 <!--pages/dossier/dossier.wxml-->
 <view class="container bgf h100">
   <view class=' fz16 wd100 pl16 pr16 borBox'>
-      <view class='flex justc alic'>
-        <input class="input name-txt" name="name" placeholder="宠物昵称" bindinput=""/>
-        <view class='flex2 tr'>
-            <image class='pet-img' src='/images/default.png' bindtap="uploadimg"></image>
+    <view class='flex justc alic'>
+      <input class="input name-txt" placeholder="宠物昵称" value='{{ name }}' bindinput='bindChangeName' />
+      <view class='flex2 tr'>
+        <image class='pet-img' src='/images/default.png' bindtap="uploadimg"></image>
+      </view>
+    </view>
+    <view class='flex justc alic pt10 pb10'>
+      <text class='fz16 col3 p3'>宠物性别:</text>
+      <view class='pl20 flex1 fz0'>
+        <view class='btn btn-sex'>
+          <image src='{{sex == "gg" ? "/images/sex-gg-ck.png" : "/images/sex-gg.png"}}' data-sex='gg' bindtap="bindChangeSex"></image>
+        </view>
+        <view class='btn btn-sex'>
+          <image src='{{sex == "mm" ? "/images/sex-mm-ck.png" : "/images/sex-mm.png"}}' data-sex='mm' bindtap="bindChangeSex"></image>
         </view>
       </view>
-      <view class='flex justc alic pt10 pb10'>
-        <text class='fz16 col3 p3'>宠物性别:</text>
-        <view class='pl20 flex1 fz0'>
-            <view class='btn btn-sex'>
-              <image src='{{sex == "gg" ? "/images/sex-gg-ck.png" : "/images/sex-gg.png"}}'></image>
-            </view>
-            <view class='btn btn-sex'>
-              <image src='{{sex == "mm" ? "/images/sex-mm-ck.png" : "/images/sex-mm.png"}}'></image>
-            </view>
-        </view>
+    </view>
+    <view class='flex justc alic pt10 pb10 p3'>
+      <text class='fz16 col3'>宠物品种:</text>
+      <view class='pl20 flex1'>
+        <input class="input" disabled='disabled' value='{{ variety.name }}' placeholder="请选择您的宠物品种" bindtap="selectVariety" />
       </view>
-      <view class='flex justc alic pt10 pb10 p3'>
-        <text class='fz16 col3'>宠物品种:</text>
-        <view class='pl20 flex1'>
-            <input class="input" name="name" disabled='disabled' value='{{variety.name}}' placeholder="请选择您的宠物品种" bindtap="selectVariety"/>
-        </view>
+    </view>
+
+    <view class='flex justc alic pt10 pb10 p3'>
+      <text class='fz16 col3'>宠物生日:</text>
+      <view class='pl20 flex1'>
+        <picker mode="date" value="{{ brithday }}" start="1978-01-01" end="2017-1-23" bindchange="bindDateChange">
+          <text>{{ brithday }}</text>
+        </picker>
       </view>
-      
-      <view class='flex justc alic pt10 pb10 p3'>
-        <text class='fz16 col3'>宠物生日:</text>
-        <view class='pl20 flex1'>
-           <picker mode="date" value="{{brithday}}" start="1978-01-01" end="2017-1-23" bindchange="bindDateChange">
-           <text>{{brithday}}</text>
-           </picker>
-        </view>
+    </view>
+
+    <view class='flex justc alic pt10 pb10 p3'>
+      <text class='fz16 col3'>到家日期:</text>
+      <view class='pl20 flex1'>
+        <picker mode="date" value="{{ homeday }}" start="1978-01-01" end="2017-1-23" bindchange="bindChangeHomeday">
+          <text>{{ homeday }}</text>
+        </picker>
       </view>
-      <view class='flex justc alic pt10 pb10 p3'>
-        <text class='fz16 col3 '>体重:</text>
-        <view class='pl20 flex1'>
-            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
-        </view>
+    </view>
+
+    <view class='flex justc alic pt10 pb10 p3'>
+      <text class='fz16 col3 '>体重:</text>
+      <view class='pl20 flex1'>
+        <input class="input" placeholder="仅支持中文、英文、数字" value='{{ petWeight }}' bindinput="bindChangeWeight" />
       </view>
-      <view class='flex justc alic pt10 pb10 p3'>
-        <text class='fz16 col3'>体高:</text>
-        <view class='pl20 flex1'>
-            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
-        </view>
+    </view>
+    <view class='flex justc alic pt10 pb10 p3'>
+      <text class='fz16 col3'>体高:</text>
+      <view class='pl20 flex1'>
+        <input class="input" placeholder="仅支持中文、英文、数字" value='{{ petHeight }}' bindinput="bindChangeHeight" />
       </view>
-      <view class='flex justc alic pt10 pb10 p3'>
-        <text class='fz16 col3'>体长:</text>
-        <view class='pl20 flex1'>
-            <input class="input" name="name" placeholder="仅支持中文、英文、数字" bindinput=""/>
-        </view>
+    </view>
+    <view class='flex justc alic pt10 pb10 p3'>
+      <text class='fz16 col3'>体长:</text>
+      <view class='pl20 flex1'>
+        <input class="input" placeholder="仅支持中文、英文、数字" value='{{ petLength }}' bindinput="bindChangeLength" />
       </view>
-      <view class='flex justc alic pt10 pb10 '>
-        <text class='fz16 col3'>疫苗情况:</text>
-        <view class='pl20 flex1 fz0'>
-            <view bindtap='bindCheckChange' data-type='vc' data-index='0' class='btn btn-dos {{vaccinum==0 ? "active" : ""}}'>未注射</view>
-            <view bindtap='bindCheckChange' data-type='vc' data-index='1' class='btn btn-dos {{vaccinum==1 ? "active" : ""}}'>已注射</view>
-        </view>
+    </view>
+    <view class='flex justc alic pt10 pb10 '>
+      <text class='fz16 col3'>疫苗情况:</text>
+      <view class='pl20 flex1 fz0'>
+        <view bindtap='bindCheckChange' data-type='vc' data-index='0' class='btn btn-dos {{vaccinum==0 ? "active" : ""}}'>未注射</view>
+        <view bindtap='bindCheckChange' data-type='vc' data-index='1' class='btn btn-dos {{vaccinum==1 ? "active" : ""}}'>已注射</view>
       </view>
-      <view class='flex justc alic pt10 pb10 '>
-        <text class='fz16 col3'>驱虫情况:</text>
-        <view class='pl20 flex1 fz0'>
-          <view  bindtap='bindCheckChange' data-type='an' data-index='0'class='btn btn-dos {{anthelmintic==0 ?"active" : ""}}'>未驱虫</view>
-          <view  bindtap='bindCheckChange' data-type='an' data-index='1' class='btn btn-dos {{anthelmintic==1 ? "active" : ""}}'>已驱虫</view>
-        </view>
+    </view>
+    <view class='flex justc alic pt10 pb10 '>
+      <text class='fz16 col3'>驱虫情况:</text>
+      <view class='pl20 flex1 fz0'>
+        <view bindtap='bindCheckChange' data-type='an' data-index='0' class='btn btn-dos {{anthelmintic==0 ?"active" : ""}}'>未驱虫</view>
+        <view bindtap='bindCheckChange' data-type='an' data-index='1' class='btn btn-dos {{anthelmintic==1 ? "active" : ""}}'>已驱虫</view>
       </view>
-      <view class='flex justc alic pt10 pb10 '>
-        <text class='fz16 col3'>绝育情况:</text>
-        <view class='pl20 flex1 fz0'>
-          <view bindtap='bindCheckChange' data-type='st' data-index='0' class='btn btn-dos {{sterilization==0 ? "active" : ""}}'>未绝育</view>
-          <view bindtap='bindCheckChange'  data-type='st'  data-index='1'  class='btn btn-dos {{sterilization==1 ? "active" : ""}}'>已绝育</view>
-        </view>
+    </view>
+    <view class='flex justc alic pt10 pb10 '>
+      <text class='fz16 col3'>绝育情况:</text>
+      <view class='pl20 flex1 fz0'>
+        <view bindtap='bindCheckChange' data-type='st' data-index='0' class='btn btn-dos {{sterilization==0 ? "active" : ""}}'>未绝育</view>
+        <view bindtap='bindCheckChange' data-type='st' data-index='1' class='btn btn-dos {{sterilization==1 ? "active" : ""}}'>已绝育</view>
       </view>
-      <view class='sub-btn'>提交</view>
+    </view>
+    <view class='sub-btn' bindtap='submit'>提交</view>
   </view>
-  
+
 </view>

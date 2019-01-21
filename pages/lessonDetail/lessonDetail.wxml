@@ -2,8 +2,8 @@
 <view class='container'>
   <view class='top-box tc wd100'>
     <view class='wd100 z100'>
-      <view class='lesson-title over fw'>范晖的基本素养--老范系列课程</view>
-      <view class='study-num fz12'>123已参加</view>
+      <view class='lesson-title over fw'>{{courseInfo.courseTitle}}</view>
+      <view class='study-num fz12'>{{ courseInfo.JoinerCount }}人已参加</view>
      
       <view class='flex wd100   borBox pl10 pr10 colf'>
     <view class='flex1  pb5 fz12 tl'>训练</view>
