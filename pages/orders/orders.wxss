@@ -44,3 +44,66 @@
   vertical-align:-2rpx;
   margin-left: 4rpx;
 }
+.pay-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .35);
+}
+.panel-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  height: 750rpx;
+}
+.cancle-icon {
+  font-size: 48rpx;
+  line-height: 1;
+  position: absolute;
+  left: 40rpx;
+  top: 26rpx;
+  color: #666666;
+}
+.top-title {
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  line-height: 36rpx;
+  color: #000000; 
+  padding:33rpx 0;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.top-icon {
+  position: absolute;
+  right: 36rpx;
+  top: -130rpx;
+  width: 164rpx;
+  height: 134rpx;
+}
+.top-icon image {
+  height: 100%;
+  width: 100%;
+}
+.price {
+  font-size: 70rpx;
+  line-height: 1;
+  padding: 34rpx 0;
+  text-align: center;
+}
+.confirm-pay {
+  position: absolute;
+  bottom: 40rpx;
+  left: 32rpx;
+  right: 32rpx;
+  background: #09BB07;
+  border-radius: 50rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+}

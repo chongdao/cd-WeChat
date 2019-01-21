@@ -6,7 +6,8 @@ Page({
    */
   data: {
     activeTab: 0,
-    orderList: [1, 2, 3]
+    orderList: [1, 2, 3],
+    payready: false
   },
 
   /**
@@ -68,5 +69,22 @@ Page({
     this.setData({
       activeTab: e.currentTarget.dataset.index
     });
-  }
+  },
+  gopay: function (e) {
+    this.setData({
+      payready: true
+    })
+  },
+  hidepanel: function (e) {
+    this.setData({
+      payready: false
+    })
+  }, 
+  preventhide: function (e) {
+    return false;
+  },
+  //禁止滑动
+  disMove: function () {
+  },
+
 })

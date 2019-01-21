@@ -18,6 +18,17 @@
     <view class='pt15 pb15 col6 fz12'>共计<view class='inline fz18 lh16'>¥68.00</view></view>
     <view class='item-status'>待支付</view>
     <button class='btn item-cancel'>取消订单</button>
-    <button class='btn item-pay'>立即支付</button>
+    <button bindtap='gopay' class='btn item-pay'>立即支付</button>
   </view>
+  <block wx:if="{{payready}}">
+    <view class='pay-panel' catchtap='hidepanel' catchtouchmove="disMove" >
+      <view class='panel-body' catchtap='preventhide'>
+        <view class='top-icon'><image src='/images/pay-icon.png'></image></view>
+        <view class='cancle-icon' catchtap='hidepanel'>x</view>
+        <view class='top-title'>确认付款 </view>
+        <view class='ct wd100 col0 price '>¥79.00</view>
+        <button  class='btn confirm-pay'>确认支付</button>
+      </view>
+    </view>
+  </block>
 </view>
