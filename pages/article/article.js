@@ -1,13 +1,14 @@
 // pages/article/article.js
-var http = require('../../utils/http.js');
+
+let api = require('../../utils/api/article.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    articleList: [
-      {
+    articleList: [{
         "id": "11",
         "articleName": "狗狗学做饭",
         "articlePicUrl": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=180632857,1070739067&fm=173&app=49&f=JPEG?w=640&h=428&s=57F639C4A0232D157519D9190300C0D1",
@@ -59,65 +60,65 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.setNavigationBarTitle({
       title: '文章'
     });
-    var _this = this;
-    // http.get('/pet/article/articleList', {
-    //   page: _this.data.page
-    // }).then(function (res) {
-    //   _this.setData({
-    //     articleList
-    //   })
-    // })
+
+    api.getArticleList()
+      .then(r => {
+        debugger;
+        this.setData({
+          articleList
+        })
+      })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
     var _this = this;
     var pagenum = _this.data.page + 1;
     http.get('/pet/article/articleList', {
       page: pagenum
-    }).then(function (res) {
-      if (res.respCode === "0000"){
+    }).then(function(res) {
+      if (res.respCode === "0000") {
         var datalist = _this.data.articleList.concat(res.articleListInfo);
         _this.setData({
           articleList: datalist,
@@ -130,16 +131,16 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  bindviewDetail: function (e) {
+  bindviewDetail: function(e) {
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../articleDetail/articleDetail?id=' + id
     })
   },
-  bindcollCount: function (e) {
+  bindcollCount: function(e) {
     var index = e.currentTarget.dataset.index;
     // data中获取列表
     var message = this.data.articleList;

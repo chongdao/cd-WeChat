@@ -4,10 +4,10 @@
    <view class='series-item' wx:for="{{lessonList}}" wx:key="key"  wx:for-index="index" wx:for-item="item" bindtap='bindViewDrill' data-checked="{{index == 1}}">
     <view class='series-item-img'></view>
     <view class='series-item-box'>
-      <view class="title">范晖的基本素养——老范系列课程</view>
-      <view class="desc">学会以后会让宠物更加有礼貌</view>
+      <view class="title">{{ item.courseName +'-'+ item.courseTitle }}</view>
+      <view class="desc">{{ item.courseDesc }}</view>
     </view>
-    <view class="desc ls-base">基础·5节课·平均15分钟</view>
+    <view class="desc ls-base">基础·{{ item.learningTimes }}节课·平均{{ item.courseLengthTime }}分钟</view>
     </view>
   </view>
 </view>
