@@ -3,7 +3,7 @@
   <view class="article-box" wx:for="{{articleList}}" wx:key="key"  bindtap='bindviewDetail' data-id="{{index+1}}">
     <view class="article-title">
       <view class='txts btf'>{{item.articleName}}</view>
-      <view class='fz14 txts pd3'>{{item.articletitle}}</view>
+      <view class='fz14 txts pd3'>{{item.articleTitle}}</view>
       <view class='fz12 txts'>{{item.createTime}}</view>
     </view>
     <view class="article-img" >

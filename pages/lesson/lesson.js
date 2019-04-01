@@ -1,5 +1,5 @@
 // pages/lesson/lesson.js
-let api_lesson = require('../../utils/api/lesson.js');
+let lessonApi = require('../../utils/api/lesson.js');
 
 Page({
 
@@ -18,7 +18,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '课堂'
     });
-    api_lesson.getSerialLesson().then(r => {
+    lessonApi.getSeries().then(r => {
       this.setData({
         lessonList: r.data.courseInfoList
       })

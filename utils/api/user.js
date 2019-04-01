@@ -24,5 +24,12 @@ module.exports = {
    */
   getMyOrders(pageNum = 1, pageSize = 10) {
     return http.get(`/ipet/orderinfo/myOrderInfo?pageNum=${pageNum}&pageSize=${pageSize}`);
+  },
+
+  /**
+   * 我的宠物档案
+   */
+  getMyPet() {
+    return http.get(`/ipet/petinfo/myPetInfo`);
   }
 }

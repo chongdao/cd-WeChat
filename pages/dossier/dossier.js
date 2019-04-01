@@ -122,16 +122,19 @@ Page({
       duration: 10000
     })
     wx.uploadFile({
-      url: '/ipet/petInfo/upLoadPetImage.json',
+      url: 'http://kairuida.net.cn/dpet-core/ipet/petimage/upLoadPetImage',
       filePath: img,
       name: 'uploadfile_ant',
-      formData: {
-        'imgIndex': i
-      },
       header: {
         "Content-Type": "multipart/form-data"
       },
-      success: function(res) {},
+      success: function(res) {
+        wx.showToast({
+          title: '上传成功',
+          icon: 'success',
+          duration: 2000
+        })
+      },
       fail: function(res) {
         wx.hideToast();
         wx.showModal({
@@ -215,7 +218,7 @@ Page({
       "sterilizationCondition": this.data.sterilization,
       "vaccineCondition": this.data.vaccinum
     };
-    debugger;
+
     api.uploadInfo(pet).then(r => {
       wx.showToast({
         title: r.message,

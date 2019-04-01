@@ -19,7 +19,15 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const getIntervalMonth = (start, end) => {
+  let startMonth = start.getMonth();
+  let endMonth = end.getMonth();
+  return (end.getFullYear() * 12 + endMonth) - (start.getFullYear() * 12 + startMonth);
+}
+
+
 module.exports = {
   formatTime: formatTime,
-  formatDate: formatDate
+  formatDate: formatDate,
+  getIntervalMonth: getIntervalMonth
 }

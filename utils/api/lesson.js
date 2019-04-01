@@ -23,7 +23,7 @@ module.exports = {
   /**
    * 获取系列课程
    */
-  getSerialLesson(pageNum = 1, pageSize = 10) {
+  getSeries(pageNum = 1, pageSize = 10) {
     return http.get(`/ipet/courseinfo/queryCourseList?courseType=2&pageNum=${pageNum}&pageSize=${pageSize}`)
   },
 

@@ -1,6 +1,6 @@
 // pages/article/article.js
 
-let api = require('../../utils/api/article.js');
+let articleApi = require('../../utils/api/article.js');
 
 Page({
 
@@ -8,51 +8,52 @@ Page({
    * 页面的初始数据
    */
   data: {
-    articleList: [{
-        "id": "11",
-        "articleName": "狗狗学做饭",
-        "articlePicUrl": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=180632857,1070739067&fm=173&app=49&f=JPEG?w=640&h=428&s=57F639C4A0232D157519D9190300C0D1",
-        "articleContent": "狗狗学做饭",
-        "readCount": "2111",
-        "collCount": "112",
-        "articletitle": "做饭",
-        "articleOrder": "112",
-        "createTime": "2018-09-15",
-        "createrIcon": "/images/default.png",
-        "createrName": "宠到科技",
-        "createrId": "112123123",
-        "isCollect": false
-      },
+    articleList: [
       {
-        "id": "11",
-        "articleName": "狗狗学做饭",
-        "articlePicUrl": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=180632857,1070739067&fm=173&app=49&f=JPEG?w=640&h=428&s=57F639C4A0232D157519D9190300C0D1",
-        "articleContent": "狗狗学做饭",
-        "readCount": "2111",
-        "collCount": "112",
-        "articletitle": "做饭",
-        "articleOrder": "112",
-        "createTime": "2018-09-15",
-        "createrId": "112123123",
-        "createrIcon": "/images/default.png",
-        "createrName": "宠到科技",
-        "isCollect": false
-      },
-      {
-        "id": "11",
-        "articleName": "狗狗学做饭",
-        "articlePicUrl": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=180632857,1070739067&fm=173&app=49&f=JPEG?w=640&h=428&s=57F639C4A0232D157519D9190300C0D1",
-        "articleContent": "狗狗学做饭",
-        "readCount": "2111",
-        "collCount": "112",
-        "articletitle": "做饭",
-        "articleOrder": "112",
-        "createTime": "2018-09-15",
-        "createrIcon": "/images/default.png",
-        "createrName": "宠到科技",
-        "createrId": "112123123",
-        "isCollect": true
-      }
+          "id": "11",
+          "articleName": "狗狗学做饭",
+          "articlePicUrl": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=180632857,1070739067&fm=173&app=49&f=JPEG?w=640&h=428&s=57F639C4A0232D157519D9190300C0D1",
+          "articleContent": "狗狗学做饭",
+          "readCount": "2111",
+          "collCount": "112",
+          "articletitle": "做饭",
+          "articleOrder": "112",
+          "createTime": "2018-09-15",
+          "createrIcon": "/images/default.png",
+          "createrName": "宠到科技",
+          "createrId": "112123123",
+          "isCollect": false
+        },
+        {
+          "id": "11",
+          "articleName": "狗狗学做饭",
+          "articlePicUrl": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=180632857,1070739067&fm=173&app=49&f=JPEG?w=640&h=428&s=57F639C4A0232D157519D9190300C0D1",
+          "articleContent": "狗狗学做饭",
+          "readCount": "2111",
+          "collCount": "112",
+          "articletitle": "做饭",
+          "articleOrder": "112",
+          "createTime": "2018-09-15",
+          "createrId": "112123123",
+          "createrIcon": "/images/default.png",
+          "createrName": "宠到科技",
+          "isCollect": false
+        },
+        {
+          "id": "11",
+          "articleName": "狗狗学做饭",
+          "articlePicUrl": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=180632857,1070739067&fm=173&app=49&f=JPEG?w=640&h=428&s=57F639C4A0232D157519D9190300C0D1",
+          "articleContent": "狗狗学做饭",
+          "readCount": "2111",
+          "collCount": "112",
+          "articletitle": "做饭",
+          "articleOrder": "112",
+          "createTime": "2018-09-15",
+          "createrIcon": "/images/default.png",
+          "createrName": "宠到科技",
+          "createrId": "112123123",
+          "isCollect": true
+        }
     ],
     page: 1
   },
@@ -65,11 +66,11 @@ Page({
       title: '文章'
     });
 
-    api.getArticleList()
+    articleApi.getList()
       .then(r => {
         debugger;
         this.setData({
-          articleList
+          articleList: r.data.articles
         })
       })
   },

@@ -8,15 +8,15 @@ module.exports = {
   /**
    * 文章列表
    */
-  getArticleList(pageNum = 1, pageSize = 10) {
-    return http.get(`/ipet/article/articleList?pageNum=${pageNum}&pageSize=${pageSize}`)
+  getList(pageNum = 1, pageSize = 10) {
+    return http.get(`/ipet/articleinfo/articleList?pageNum=${pageNum}&pageSize=${pageSize}`)
   },
 
   /**
    * 文章详情
    * @param {String} id 文章id
    */
-  getArticleInfo(id) {
+  getDetail(id) {
     return http.get(`/ipet/articleinfo/articleInfo?articleId=${id}`);
   },
 

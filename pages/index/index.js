@@ -3,7 +3,9 @@
 const app = getApp()
 var http = require('../../utils/http.js');
 
-let api_lesson = require('../../utils/api/lesson.js')
+let apiLesson = require('../../utils/api/lesson.js');
+let apiUser = require('../../utils/api/user.js');
+let util = require('../../utils/util.js');
 
 Page({
   data: {
@@ -12,6 +14,9 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     archivesList: [1],
+
+    // 宠物档案
+    petInfo: null,
 
     // 用户参加的课程
     userLessons: [],
@@ -74,15 +79,28 @@ Page({
       })
     }
 
+    // 宠物档案
+    apiUser.getMyPet().then(r => {
+      let pet = r.data.petInfo;
+      let now = new Date();
+      let birthday = new Date(pet.petBrithday);
+      let intervalMonth = util.getIntervalMonth(birthday, now);
+      pet.old = Math.floor(intervalMonth / 12) + '年' + intervalMonth % 12 + '个月';
+
+      this.setData({
+        petInfo: pet
+      })
+    })
+
     // 获取用户已参加课程
-    api_lesson.getUserLesson().then(r => {
+    apiUser.getUserLesson().then(r => {
       this.setData({
         userLessons: r.data.courseInfoList
       })
     })
 
     // 获取系列课程
-    api_lesson.getSerialLesson().then(r => {
+    apiLesson.getSeries().then(r => {
       this.setData({
         seriesLessons: r.data.courseInfoList
       })

@@ -120,7 +120,6 @@ Page({
    */
   onLoad: function(options) {
     api.getTypes().then(r => {
-      debugger;
       this.setData({
         list: r.data.petTypeList
       });
