@@ -9,108 +9,108 @@ Page({
   data: {
     focus: false,
     val: '',
-    //list: [],
-    list: [{
-        id: 1,
-        title: '热门品种',
-        list: [{
-            name: '阿拉斯加',
-            id: 123,
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-        ],
-      },
-      {
-        id: 2,
-        title: 'A',
-        list: [{
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-        ],
-      },
-      {
-        id: 3,
-        title: 'B',
-        list: [{
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-        ],
-      },
-      {
-        id: 4,
-        title: 'C',
-        list: [{
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-          {
-            id: 123,
-            name: '阿拉斯加',
-            src: '/images/default.png',
-          },
-        ],
-      },
-    ],
+    list: [],
+    // list: [{
+    //     id: 1,
+    //     title: '热门品种',
+    //     list: [{
+    //         name: '阿拉斯加',
+    //         id: 123,
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     id: 2,
+    //     title: 'A',
+    //     list: [{
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     id: 3,
+    //     title: 'B',
+    //     list: [{
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     id: 4,
+    //     title: 'C',
+    //     list: [{
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //       {
+    //         id: 123,
+    //         name: '阿拉斯加',
+    //         src: '/images/default.png',
+    //       },
+    //     ],
+    //   },
+    // ],
     nav: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"],
     toView: 1
   },
@@ -119,11 +119,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // api.getTypes().then(r => {
-    //   this.setData({
-    //     list: r.data.petTypeList
-    //   });
-    // })
+    api.getTypes().then(r => {
+      debugger;
+      this.setData({
+        list: r.data.petTypeList
+      });
+    })
   },
 
   /**

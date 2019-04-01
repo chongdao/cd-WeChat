@@ -215,6 +215,7 @@ Page({
       "sterilizationCondition": this.data.sterilization,
       "vaccineCondition": this.data.vaccinum
     };
+    debugger;
     api.uploadInfo(pet).then(r => {
       wx.showToast({
         title: r.message,

@@ -1,6 +1,8 @@
 var Promise = require('../libs/es6-promise.min');
 let host = 'http://kairuida.net.cn/dpet-core';
 
+//let host = 'http://39.96.46.173/dpet-core';
+
 function requstGet(url, data) {
   return requst(url, 'GET', data)
 }
