@@ -27,7 +27,8 @@
         <view class='cancle-icon' catchtap='hidepanel'>x</view>
         <view class='top-title'>确认付款 </view>
         <view class='ct wd100 col0 price '>¥79.00</view>
-        <button  class='btn confirm-pay'>确认支付</button>
+        <view class='pay-type'><image src='/images/wx-pay.png'></image></view>
+        <button bindtap='confirmTopay' class='btn confirm-pay'>确认支付</button>
       </view>
     </view>
   </block>
