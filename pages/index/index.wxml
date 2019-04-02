@@ -7,19 +7,21 @@
     <view class="tc ps">点击添加宠物档案, 更多惊喜</view>
     <view class="tc ps">每天抚摸宠物, 可以让你们更亲密</view>
   </view>
+
   <view wx:if="{{archivesList.length !== 0}}" class='archives-info'>
     <view class='flex posRel pl10'>
       <view class='archives-info-img'></view>
       <view class='ml10'>
         <view class='fz16 col3'>
-          <text>王辣条小可爱</text>
-          <image class='icon-sex ml5'></image>
+          <text>{{ petInfo.petName }}</text>
+          <image class='icon-sex ml5' src='{{ petInfo }}'></image>
         </view>
-        <view class='col9 fz12 mt5'>一年零七个月</view>
+        <view class='col9 fz12 mt5'>{{ petInfo.old }}</view>
       </view>
+      <!-- <view wx:if='{{ petInfo == null }}' class='add-archives' bindtap='bindViewDossier'>+添加档案</view> -->
       <view class='add-archives' bindtap='bindViewDossier'>+添加档案</view>
     </view>
-    <view class='tc pt10 pb10 col9 fz14'>大大大大大大大哥别杀我</view>
+    <view class='tc pt10 pb10 col9 fz14'>{{}}</view>
   </view>
 
   <view class='info-box'>

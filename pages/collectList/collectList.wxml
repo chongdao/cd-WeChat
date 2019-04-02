@@ -1,6 +1,6 @@
 <!--pages/collectList/collectList.wxml-->
 <view class="container {{articleList.length < 1 ? 'ht100' : '' }}">
-  <view class="article-box" wx:for="{{articleList}}" wx:key="key" wx:for-index="index" wx:for-item="item" bindtap='bindviewDetail' data-id="{{index+1}}">
+  <view class="article-box" wx:for="{{articleList}}" wx:key="key" bindtap='bindviewDetail' data-id="{{index+1}}">
     <view class="article-title">熟悉狗笼——到家的基础</view>
     <view class="article-img"></view>
     <view class="article-subtile">刚出生的狗仔到家怕生怎么破？不急，宠到君从传授</view>

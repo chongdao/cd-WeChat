@@ -1,6 +1,6 @@
 // pages/mylesson/mylesson.js
 
-let api = require('../../utils/api/lesson.js')
+let apiUser = require('../../utils/api/user.js')
 let util = require('../../utils/util.js')
 
 Page({
@@ -16,7 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    api.getUserLesson().then(r => {
+    apiUser.getUserLesson().then(r => {
       let list = r.data.courseInfoList;
       list.forEach(i => {
         let d = new Date(i.createTime);
