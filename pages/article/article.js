@@ -8,53 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    articleList: [
-      {
-          "id": "11",
-          "articleName": "狗狗学做饭",
-          "articlePicUrl": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=180632857,1070739067&fm=173&app=49&f=JPEG?w=640&h=428&s=57F639C4A0232D157519D9190300C0D1",
-          "articleContent": "狗狗学做饭",
-          "readCount": "2111",
-          "collCount": "112",
-          "articletitle": "做饭",
-          "articleOrder": "112",
-          "createTime": "2018-09-15",
-          "createrIcon": "/images/default.png",
-          "createrName": "宠到科技",
-          "createrId": "112123123",
-          "isCollect": false
-        },
-        {
-          "id": "11",
-          "articleName": "狗狗学做饭",
-          "articlePicUrl": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=180632857,1070739067&fm=173&app=49&f=JPEG?w=640&h=428&s=57F639C4A0232D157519D9190300C0D1",
-          "articleContent": "狗狗学做饭",
-          "readCount": "2111",
-          "collCount": "112",
-          "articletitle": "做饭",
-          "articleOrder": "112",
-          "createTime": "2018-09-15",
-          "createrId": "112123123",
-          "createrIcon": "/images/default.png",
-          "createrName": "宠到科技",
-          "isCollect": false
-        },
-        {
-          "id": "11",
-          "articleName": "狗狗学做饭",
-          "articlePicUrl": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=180632857,1070739067&fm=173&app=49&f=JPEG?w=640&h=428&s=57F639C4A0232D157519D9190300C0D1",
-          "articleContent": "狗狗学做饭",
-          "readCount": "2111",
-          "collCount": "112",
-          "articletitle": "做饭",
-          "articleOrder": "112",
-          "createTime": "2018-09-15",
-          "createrIcon": "/images/default.png",
-          "createrName": "宠到科技",
-          "createrId": "112123123",
-          "isCollect": true
-        }
-    ],
+    articleList: [],
     page: 1
   },
 
@@ -68,7 +22,6 @@ Page({
 
     articleApi.getList()
       .then(r => {
-        debugger;
         this.setData({
           articleList: r.data.articles
         })
@@ -142,26 +95,26 @@ Page({
     })
   },
   bindcollCount: function(e) {
-    var index = e.currentTarget.dataset.index;
-    // data中获取列表
-    var message = this.data.articleList;
-    for (let i in message) { //遍历列表数据
-      if (i == index) { //根据下标找到目标
-        var collectStatus = false
-        if (message[i].isCollect == false) { //如果是没点赞+1
-          collectStatus = true
-          message[i].isCollect = true;
-        } else {
-          collectStatus = false
-          message[i].isCollect = false
-        }
+
+    let articleId = e.currentTarget.dataset.aid;
+    let article = this.data.articleList.find(i => i.id === articleId);
+
+    if (article.isCollect) {
+      articleApi.unCollect(articleId).then(r => {
         wx.showToast({
-          title: collectStatus ? '收藏成功' : '取消收藏',
-        })
-      }
+          title: '取消收藏'
+        });
+        article.isCollect = false;
+        article.collCount--;
+      })
+    } else {
+      articleApi.collect(articleId).then(r => {
+        wx.showToast({
+          title: '收藏成功'
+        });
+        article.isCollect = true;
+        article.collCount++;
+      })
     }
-    this.setData({
-      articleList: message
-    })
   }
 })

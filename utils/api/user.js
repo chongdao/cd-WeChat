@@ -15,7 +15,7 @@ module.exports = {
   /**
    * 我收藏的文章
    */
-  getMyCollectArticles(pageNum = 1, pageSize = 10) {
+  getCollectArticles(pageNum = 1, pageSize = 10) {
     return http.get(`/ipet/articleinfo/mySubscribeArticle?pageNum=${pageNum}&pageSize=${pageSize}`)
   },
 
