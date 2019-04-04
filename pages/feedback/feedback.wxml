@@ -10,5 +10,5 @@
     </view>
     <view class='fz14 col9 mt17'>相关问题截图或照片</view>
   </view>
-  <view class='sub-btn {{fdoption!="" ? "sub-ok": ""}}'>提交反馈</view>
+  <view class='sub-btn {{fdoption!="" ? "sub-ok": ""}}' bindtap='submit'>提交反馈</view>
 </view>
