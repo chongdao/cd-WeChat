@@ -7,13 +7,21 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录
-    wx.login({
-      success: res => {
-        let {
-          code // 011XzRsi1cGH4u0wR0si1IX6ti1XzRsz
-        } = res;
-      }
-    })
+    // wx.login({
+    //   success: res => {
+    //     if (res.code) {
+    //       // 发起网络请求
+    //       wx.request({
+    //         url: '/login',
+    //         data: {
+    //           code: res.code
+    //         }
+    //       })
+    //     } else {
+    //       console.log('登录失败！' + res.errMsg)
+    //     }
+    //   }
+    // })
     // 获取用户信息
     wx.getSetting({
       success: res => {
