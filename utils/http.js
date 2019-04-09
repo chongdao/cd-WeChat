@@ -20,7 +20,7 @@ function requst(url, method, data = {}) {
       url: host + url,
       data: data,
       header: {
-        'x-auth-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Nzc2MzUyMDAwMDAsInVzZXJfaW5mbyI6IntcImlkXCI6XCIxMjM0NTZcIixcInByb3ZpZGVyS2V5XCI6XCJhc2Rhc2RcIixcInJvbGVfa2V5XCI6XCIxMTAyXCJ9In0.0a2_sMVAbtDGXyIotG7IiHBJRqZtgijqiRNrd-jBVk0'
+        'x-auth-token': wx.getStorageSync('token')
       },
       method: method.toUpperCase(), // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res) {

@@ -9,9 +9,18 @@ App({
     // 登录
     wx.login({
       success: res => {
-        let {
-          code // 011XzRsi1cGH4u0wR0si1IX6ti1XzRsz
-        } = res;
+        wx.request({
+          url: 'http://kairuida.net.cn/dpet-core/login/code2Session',
+          data: {
+            code: res.code
+          },
+          success(res) {
+            if (res.data) {
+              let token = res.data.data['x-auth-token'];
+              wx.setStorageSync('token', token)
+            }
+          }
+        })
       }
     })
     // 获取用户信息
