@@ -112,5 +112,32 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  getPhoneNumber: function (e) {
+    if (e.detail.iv) {
+      apiUser.bindWXPhoneNumber({
+        encrypted_data: e.detail.encryptedData,
+        encrypt_iv: e.detail.iv
+      }).then((res) => {
+        if(res.code) {
+          wx.showToast({ title: '绑定成功' });
+        }
+        else {
+          // do something
+          wx.showModal({
+            title: '绑定失败',
+            content: '[服务端返回的错误信息]',
+            showCancel: false,
+            success: res => {
+              if (res.confirm) { // 用户确认后
+                // do something
+              }
+            }
+          })
+        }
+      })
+    } else { // 用户拒绝授权
+      // do something
+    }
   }
 })

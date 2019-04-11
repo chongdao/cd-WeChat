@@ -7,6 +7,7 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录
+
     wx.login({
       success: res => {
         wx.request({
@@ -23,6 +24,7 @@ App({
         })
       }
     })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {

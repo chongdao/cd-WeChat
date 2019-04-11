@@ -107,3 +107,10 @@
   font-size: 36rpx;
   text-align: center;
 }
+.pay-type {
+  padding: 0 15rpx;
+}
+.pay-type image {
+  width: 730rpx;
+  height: 60rpx;
+}
