@@ -225,6 +225,10 @@ Page({
         icon: r.message === '操作成功' ? 'success' : 'error',
         duration: 2000
       })
+
+      wx.navigateTo({
+        url: '../index/index'
+      })
     })
   }
 })

@@ -1,5 +1,8 @@
-var Promise = require('../libs/es6-promise.min');
-let host = 'http://kairuida.net.cn/dpet-core';
+const Promise = require('../libs/es6-promise.min');
+
+const host = 'http://kairuida.net.cn/dpet-core';
+
+const app = getApp();
 
 //let host = 'http://39.96.46.173/dpet-core';
 
@@ -13,16 +16,17 @@ function requstPost(url, data) {
 
 //封装Request请求方法
 function requst(url, method, data = {}) {
-  wx.showNavigationBarLoading()
-  data.method = method
+  wx.showNavigationBarLoading();
+  data.method = method;
+
   return new Promise((resove, reject) => {
     wx.request({
       url: host + url,
       data: data,
       header: {
-        'x-auth-token': wx.getStorageSync('token')
+        'x-auth-token': app.globalData.token
       },
-      method: method.toUpperCase(), // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      method: data.method.toUpperCase(), // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res) {
         wx.hideNavigationBarLoading()
         resove(res.data)
@@ -35,27 +39,9 @@ function requst(url, method, data = {}) {
     })
   })
 }
-//用户登录
-function login() {
-  return new Promise((resolve, reject) => wx.login({
-    success: resolve,
-    fail: reject
-  }))
-}
-
-//获取用户信息
-function getUserInfo() {
-  return login().then(res => new Promise((resolve, reject) =>
-    wx.getUserInfo({
-      success: resolve,
-      fail: reject
-    })
-  ))
-}
 
 module.exports = {
   Promise,
-  getUserInfo,
   get: requstGet,
   post: requstPost,
   requst

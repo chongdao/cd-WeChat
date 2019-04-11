@@ -33,7 +33,7 @@
         <view class='col9 fz12 mt5'>{{ petInfo.old }}</view>
       </view>
       <!-- <view wx:if='{{ petInfo == null }}' class='add-archives' bindtap='bindViewDossier'>+添加档案</view> -->
-      <view class='add-archives' bindtap='bindViewDossier'>+添加档案</view>
+      <view class='add-archives' wx:if="{{ petInfo == null }}"  bindtap='bindViewDossier'>+添加档案</view>
     </view>
     <view class='tc pt10 pb10 col9 fz14'>{{}}</view>
   </view>
