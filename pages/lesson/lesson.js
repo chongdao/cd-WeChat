@@ -64,38 +64,22 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-    var that = this;
+    let that = this;
     // 显示加载图标
     wx.showLoading({
       title: '玩命加载中',
-    })
-    var page = that.data.page;
-    // 页数+1
-    page = page + 1;
-    wx.request({
-      url: 'https://xxx/?page=' + page,
-      method: "GET",
-      // 请求头部
-      header: {
-        'content-type': 'application/text'
-      },
-      success: function(res) {
-        // 回调函数
-        var lessonList = that.data.lessonList;
+    });
 
-        for (var i = 0; i < res.data.data.length; i++) {
-          lessonList.push(res.data.data[i]);
-        }
-        // 设置数据
-        that.setData({
-          page: page,
-          lessonList: lessonList
-        });
-        // 隐藏加载框
-        wx.hideLoading();
-      }
+    let page = that.data.page;
+    lessonApi.getSeries(page + 1).then(r => {
+      // 追加数组
+      that.setData({
+        page: page + 1,
+        lessonList: [...that.data.lessonList, ...r.data.courseInfoList]
+      });
+      // 隐藏加载框
+      wx.hideLoading();
     })
-
   },
   bindViewDrill: function(e) {
     if (e.currentTarget.dataset.checked) {
@@ -103,8 +87,9 @@ Page({
         url: '../drill/drill'
       })
     } else {
+      let lessonId = e.currentTarget.dataset.id;
       wx.navigateTo({
-        url: '../lessonDetail/lessonDetail'
+        url: `../lessonDetail/lessonDetail?lessonId=${lessonId}`
       })
     }
   },

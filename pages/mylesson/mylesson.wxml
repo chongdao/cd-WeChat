@@ -1,6 +1,6 @@
 <!--pages/mylesson/mylesson.wxml-->
 <view class="container pt10 pl15 pr15 borBox bgf ht100 disb">
-  <view class='pt20  pb10 flex wd100 borderbe0' wx:for="{{lessonList}}" wx:key="key" wx:for-index="index">
+  <view class='pt20  pb10 flex wd100 borderbe0' wx:for="{{lessonList}}" wx:key="key" data-id='{{ item.id }}' bindtap='bindViewDrill'>
     <view class='flex2'>
       <view class='fz18 col3 over'>{{ item.courseName }}</view>
       <view class='fz14 col9 mt10'>学过{{ item.learningTimes }}次</view>

@@ -1,89 +1,89 @@
 <!--index.wxml-->
 <block wx:if="{{!hasUserInfo && canIUse}}">
-    <view class='header'>
-        <image src='/images/wx_login.png'></image>
-    </view>
-    <view class='content'>
-        <view>申请获取以下权限</view>
-        <text>获得你的公开信息(昵称，头像等)</text>
-    </view>
-    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">
-        授权登录
-    </button>
+  <view class='header'>
+    <image src='/images/wx_login.png'></image>
+  </view>
+  <view class='content'>
+    <view>申请获取以下权限</view>
+    <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">
+    授权登录
+  </button>
   <!-- <view class="userinfo" >
       <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
       <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
   </view> -->
 </block>
 <block wx:else>
-<view class="container">
-  <view class="archives-info" wx:if="{{archivesList.length == 0}}" bindtap="bindViewDossier">
-    <view class="tc ps">点击添加宠物档案, 更多惊喜</view>
-    <view class="tc ps">每天抚摸宠物, 可以让你们更亲密</view>
-  </view>
+  <view class="container">
+    <view class="archives-info" wx:if="{{archivesList.length == 0}}" bindtap="bindViewDossier">
+      <view class="tc ps">点击添加宠物档案, 更多惊喜</view>
+      <view class="tc ps">每天抚摸宠物, 可以让你们更亲密</view>
+    </view>
 
-  <view wx:if="{{archivesList.length !== 0}}" class='archives-info'>
-    <view class='flex posRel pl10'>
-      <view class='archives-info-img'></view>
-      <view class='ml10'>
-        <view class='fz16 col3'>
-          <text>{{ petInfo.petName }}</text>
-          <image class='icon-sex ml5' src='{{ petInfo.petImageId }}'></image>
+    <view wx:if="{{archivesList.length !== 0}}" class='archives-info'>
+      <view class='flex posRel pl10'>
+        <view class='archives-info-img'></view>
+        <view class='ml10'>
+          <view class='fz16 col3'>
+            <text>{{ petInfo.petName }}</text>
+            <image class='icon-sex ml5' src='{{ petInfo.petImageId }}'></image>
+          </view>
+          <view class='col9 fz12 mt5'>{{ petInfo.old }}</view>
         </view>
-        <view class='col9 fz12 mt5'>{{ petInfo.old }}</view>
+        <!-- <view wx:if='{{ petInfo == null }}' class='add-archives' bindtap='bindViewDossier'>+添加档案</view> -->
+        <view class='add-archives' wx:if="{{ petInfo == null }}" bindtap='bindViewDossier'>+添加档案</view>
       </view>
-      <!-- <view wx:if='{{ petInfo == null }}' class='add-archives' bindtap='bindViewDossier'>+添加档案</view> -->
-      <view class='add-archives' wx:if="{{ petInfo == null }}"  bindtap='bindViewDossier'>+添加档案</view>
+      <view class='tc pt10 pb10 col9 fz14'>{{}}</view>
     </view>
-    <view class='tc pt10 pb10 col9 fz14'>{{}}</view>
-  </view>
 
-  <view class='info-box'>
-    <button class="add-btn" bindtap="bindViewLesson">+ 添加</button>
-    <view class="title">已参加课程</view>
-    <view class="ct no-lesson" wx:if="{{userLessons.length == 0}}">暂无课程，请添加</view>
-    <view class='lesson-item' wx:for="{{userLessons}}" wx:key="id">
-      <view class='flex'>
-        <view class='lesson-item-title over' bindtap='bindViewDrill'>
-          {{item.courseTitle + '-' + item.courseName}}
+    <view class='info-box'>
+      <button class="add-btn" bindtap="bindViewLesson">+ 添加</button>
+      <view class="title">已参加课程</view>
+      <view class="ct no-lesson" wx:if="{{userLessons.length == 0}}">暂无课程，请添加</view>
+      <view class='lesson-item' wx:for="{{userLessons}}" wx:key="id">
+        <view class='flex'>
+          <view class='lesson-item-title over' bindtap='bindViewDrill'>
+            {{item.courseTitle + '-' + item.courseName}}
+          </view>
+          <view class='fz12 colbe pr5 pt10'>{{ item.courseLengthTime }}min</view>
         </view>
-        <view class='fz12 colbe pr5 pt10'>{{ item.courseLengthTime }}min</view>
+      </view>
+      <view class="ct lesson-more" wx:if="{{userLessons.length > 2}}" bindtap='bindViewLesson'>
+        查看更多
       </view>
     </view>
-    <view class="ct lesson-more" wx:if="{{userLessons.length > 2}}" bindtap='bindViewLesson'>
-      查看更多
-    </view>
-  </view>
 
-  <view class='info-box'>
-    <view class="title">系列课程</view>
-    <view class="more-info" bindtap="bindViewLesson">查看更多</view>
-    <view class='series-item' wx:for="{{seriesLessons}}" wx:key="id" bindtap='bindViewDrill' data-checked="{{index == 1}}">
-      <view class='series-item-img'></view>
-      <view class='series-item-box'>
-        <view class="title">{{item.courseTitle + '-' + item.courseName}}</view>
-        <view class="desc">{{item.courseDesc}}</view>
+    <view class='info-box'>
+      <view class="title">系列课程</view>
+      <view class="more-info" bindtap="bindViewLesson">查看更多</view>
+      <view class='series-item' wx:for="{{seriesLessons}}" wx:key="id" bindtap='bindViewDrill' data-checked="{{ false }}" data-id='{{ item.id }}'>
+        <view class='series-item-img'></view>
+        <view class='series-item-box'>
+          <view class="title">{{item.courseTitle + '-' + item.courseName}}</view>
+          <view class="desc">{{item.courseDesc}}</view>
+        </view>
+        <view class="desc ls-base">{{item.courseLabel}}·{{item.learningTimes}}节课·平均{{item.courseCost}}分钟 </view>
       </view>
-      <view class="desc ls-base">{{item.courseLabel}}·{{item.learningTimes}}节课·平均{{item.courseCost}}分钟 </view>
     </view>
-  </view>
 
-  <view class='info-box np'>
-    <view class="title">合适的训练</view>
-    <view class="more-info" bindtap='bindViewLeslist'>更多训练</view>
-    <scroll-view scroll-x="true" class='sv-box'>
-      <view class="plan-box">
-        <view class='plan-item' wx:for="{{userLessons}}" wx:key="key">
-          <view class="plan-item-box pl10" data-checked='true' bindtap='bindViewDrill'>
-            <view class='fz16 colf mt10 wd100 borBox over'>狗狗乱咬东西</view>
-            <view class='fz12 colf mt5'>基础</view>
-            <view class='colf fz12 mt5'>15分钟</view>
-            <view class='plan-item-price'>{{item > 1 ? '¥1'+item : '免费'}}</view>
+    <view class='info-box np'>
+      <view class="title">合适的训练</view>
+      <view class="more-info" bindtap='bindViewLeslist'>更多训练</view>
+      <scroll-view scroll-x="true" class='sv-box'>
+        <view class="plan-box">
+          <view class='plan-item' wx:for="{{ scatteredLessons }}" wx:key="key">
+            <view class="plan-item-box pl10" bindtap='bindViewDrill' data-checked='{{ true }}' data-id='{{ item.id }}'>
+              <view class='fz16 colf mt10 wd100 borBox over'>{{ item.courseTitle }}</view>
+              <view class='fz12 colf mt5'>{{ item.level }}</view>
+              <view class='colf fz12 mt5'>{{ item.courseLengthTime }}分钟</view>
+              <view class='plan-item-price'>¥{{ item.courseCost }}</view>
+            </view>
           </view>
         </view>
-      </view>
-    </scroll-view>
+      </scroll-view>
+    </view>
+    <view class='pt20 pb20 colbe fz12 tc'>没有更多内容了</view>
   </view>
-  <view class='pt20 pb20 colbe fz12 tc'>没有更多内容了</view>
-</view>
 </block>

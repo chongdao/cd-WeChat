@@ -1,10 +1,10 @@
 <view class="container bgf posRel">
   <image class='top-img-icon' src='/images/collect-no.png'></image>
   <image class='top-img wd100'></image>
-  <view class='pl16 pr16 mt10 borBox wd100'>这是个测试测试出测试当时的</view>
+  <view class='pl16 pr16 mt10 borBox wd100'>{{ article.articleTitle }}</view>
   <view class='flex pl16 pr16 mt10 borBox wd100'>
     <image class='author-img' src='/images/default.png'></image>
-    <view class='author-info flex1 pl10'>
+    <!-- <view class='author-info flex1 pl10'>
       <view class='col0 name'>宠到科技</view>
       <view class='col9 fz12 subname'>微信公众号：宠到科技</view>
     </view>
@@ -13,6 +13,9 @@
       <view class='m7'>1123</view>
       <image class='collect-praise-icon m16' src='/images/collect-a.png'></image>
       <view class='m7'>454</view>
+    </view> -->
+    <view>
+      {{ article.articleContent }}
     </view>
   </view>
   <view class='content fz16 pl16 mt10 pr16 borBox wd100 col3'>

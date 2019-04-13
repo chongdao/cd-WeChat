@@ -1,7 +1,7 @@
 <!--pages/lesson/lesson.wxml-->
 <view class="container">
   <view class='info-box'>
-    <view class='series-item' wx:for="{{lessonList}}" wx:key="key" bindtap='bindViewDrill' data-checked="{{index != 1}}">
+    <view class='series-item' wx:for="{{lessonList}}" wx:key="key" bindtap='bindViewDrill' data-id="{{ item.id }}" data-checked="{{ false }}">
       <view class='series-item-img'></view>
       <view class='series-item-box'>
         <view class="title">{{ item.courseName +'-'+ item.courseTitle }}</view>

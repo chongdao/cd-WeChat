@@ -67,19 +67,22 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-    var _this = this;
-    var pagenum = _this.data.page + 1;
-    http.get('/pet/article/articleList', {
-      page: pagenum
-    }).then(function(res) {
-      if (res.respCode === "0000") {
-        var datalist = _this.data.articleList.concat(res.articleListInfo);
-        _this.setData({
-          articleList: datalist,
-          page: pagenum
-        })
-      }
+    let that = this;
+    // 显示加载图标
+    wx.showLoading({
+      title: '玩命加载中',
     });
+
+    let page = that.data.page;
+    articleApi.getList(page + 1).then(r => {
+      // 追加数组
+      that.setData({
+        page: page + 1,
+        articleList: [...that.data.articleList, ...r.data.articles]
+      });
+      // 隐藏加载框
+      wx.hideLoading();
+    })
   },
 
   /**

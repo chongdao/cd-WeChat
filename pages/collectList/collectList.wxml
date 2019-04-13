@@ -1,10 +1,10 @@
 <!--pages/collectList/collectList.wxml-->
 <view class="container {{articleList.length < 1 ? 'ht100' : '' }}">
-  <view class="article-box" wx:for="{{articleList}}" wx:key="key" bindtap='bindviewDetail' data-id="{{index+1}}">
-    <view class="article-title">熟悉狗笼——到家的基础</view>
+  <view class="article-box" wx:for="{{articleList}}" wx:key="key" bindtap='bindviewDetail' data-id="{{ item.id }}">
+    <view class="article-title">{{ item.articleTitle }}</view>
     <view class="article-img"></view>
-    <view class="article-subtile">刚出生的狗仔到家怕生怎么破？不急，宠到君从传授</view>
-    <view class="article-tag">123 阅读 · 1123 收藏</view>
+    <!-- <view class="article-subtile">刚出生的狗仔到家怕生怎么破？不急，宠到君从传授</view> -->
+    <view class="article-tag">{{ item.readCount }} 阅读 · {{ item.collCount }} 收藏</view>
     <view class="article-author">
       <view class="article-author-img"></view>
       <view class="article-author-name">宠到</view>

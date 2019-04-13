@@ -1,6 +1,7 @@
 // pages/dossier/dossier.js
 var util = require('../../utils/util.js');
 let api = require('../../utils/api/pet.js');
+let userApi = require('../../utils/api/user.js');
 
 Page({
 
@@ -8,29 +9,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: '',
-    sex: 'gg',
-    vaccinum: 0,
-    anthelmintic: 0,
-    sterilization: 0,
+    petInfo: {
+      "petName": '',
 
-    // 宠物品种
-    variety: {
-      id: '',
-      name: ''
-    },
-    brithday: util.formatDate(new Date()),
-    homeday: util.formatDate(new Date()),
-    "petWeight": '',
-    "petHeight": '',
-    "petLength": '',
+      // 种类id
+      "petType": '',
+
+      // 种类名称
+      'petTypeName': '',
+
+      "petSex": 1,
+      "petBrithday": util.formatDate(new Date()),
+      "homeDay": util.formatDate(new Date()),
+      "petWeight": 0,
+      "petHeight": 0,
+      "petLength": 0,
+      "anthelminticCondition": 0,
+      "sterilizationCondition": 0,
+      "vaccineCondition": 0
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    // 获取我的宠物档案
+    userApi.getMyPet().then(r => {
+      this.setData({
+        petInfo: r.data.petInfo
+      })
+    });
   },
 
   /**
@@ -148,12 +157,12 @@ Page({
   },
   bindDateChange: function(e) {
     this.setData({
-      brithday: e.detail.value
+      'petInfo.petBrithday': e.detail.value
     })
   },
   bindChangeHomeday(e) {
     this.setData({
-      homeday: e.detail.value
+      'petInfo.homeDay': e.detail.value
     })
   },
   bindCheckChange: function(e) {
@@ -161,43 +170,43 @@ Page({
     let inx = e.currentTarget.dataset.index;
     if (ty == 'vc') {
       this.setData({
-        vaccinum: inx
+        'petInfo.vaccineCondition': inx
       })
     }
     if (ty == 'an') {
       this.setData({
-        anthelmintic: inx
+        'petInfo.anthelminticCondition': inx
       })
     }
     if (ty == 'st') {
       this.setData({
-        sterilization: inx
+        'petInfo.sterilizationCondition': inx
       })
     }
   },
   bindChangeName(e) {
     this.setData({
-      name: e.detail.value
+      'petInfo.petName': e.detail.value
     })
   },
   bindChangeSex(e) {
     this.setData({
-      sex: e.currentTarget.dataset.sex
+      'petInfo.petSex': e.currentTarget.dataset.sex
     })
   },
   bindChangeWeight(e) {
     this.setData({
-      petWeight: e.detail.value
+      'petInfo.petWeight': e.detail.value
     })
   },
   bindChangeHeight(e) {
     this.setData({
-      petHeight: e.detail.value
+      'petInfo.petHeight': e.detail.value
     })
   },
   bindChangeLength(e) {
     this.setData({
-      petLength: e.detail.value
+      'petInfo.petLength': e.detail.value
     })
   },
 
@@ -205,21 +214,7 @@ Page({
    * 提交
    */
   submit() {
-    let pet = {
-      "petName": this.data.name,
-      "petType": this.data.variety.id,
-      "petSex": this.data.sex == 'gg' ? 1 : 2,
-      "petBrithday": this.data.brithday,
-      "homeDay": this.data.homeday,
-      "petWeight": this.data.petWeight,
-      "petHeight": this.data.petHeight,
-      "petLength": this.data.petLength,
-      "anthelminticCondition": this.data.anthelmintic,
-      "sterilizationCondition": this.data.sterilization,
-      "vaccineCondition": this.data.vaccinum
-    };
-
-    api.uploadInfo(pet).then(r => {
+    api.uploadInfo(this.data.petInfo).then(r => {
       wx.showToast({
         title: r.message,
         icon: r.message === '操作成功' ? 'success' : 'error',

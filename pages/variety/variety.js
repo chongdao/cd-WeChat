@@ -194,10 +194,8 @@ Page({
     var currPage = pages[pages.length - 1]; //当前页面
     var prevPage = pages[pages.length - 2]; //上一个页面
     prevPage.setData({
-      variety: {
-        id: e.currentTarget.dataset.id,
-        name: e.currentTarget.dataset.name
-      }
+      "petInfo.petType": e.currentTarget.dataset.id,
+      'petInfo.petTypeName': e.currentTarget.dataset.name
     });
     wx.navigateBack();
   }

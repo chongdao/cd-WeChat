@@ -2,18 +2,18 @@
 <view class='container'>
   <view class='top-box tc wd100'>
     <view class='wd100 z100'>
-      <view class='lesson-title over fw'>{{courseInfo.courseTitle}}</view>
+      <view class='lesson-title over fw'>{{ courseInfo.courseTitle }}</view>
       <view class='study-num fz12'>{{ courseInfo.JoinerCount }}人已参加</view>
      
-      <view class='flex wd100   borBox pl10 pr10 colf'>
+      <view class='flex wd100 borBox pl10 pr10 colf'>
     <view class='flex1  pb5 fz12 tl'>训练</view>
     <view class='flex1  pb5 fz12 tc'>平均</view>
     <view class='flex1  pb5 fz12 tr'>难度</view>
   </view>
   <view class='flex wd100 pb5 borBox pl10 pr10 colf'>
-    <view class='flex1  pb5 fz16 tl'>3节</view>
-    <view class='flex1  pb5 fz16 tc'>20"</view>
-    <view class='flex1  pb5 fz16 tr'>基础</view>
+    <view class='flex1  pb5 fz16 tl'>{{ courseInfo.learningTimes }}节</view>
+    <view class='flex1  pb5 fz16 tc'>{{ courseInfo.courseLengthTime }}"</view>
+    <view class='flex1  pb5 fz16 tr'>{{ courseInfo.level }}</view>
   </view>
    <button class='btn btn-add' bindtap='bindbeginStudy'>加入课程</button>
     </view>
@@ -21,20 +21,18 @@
   </view>
   <view class='pl10 pr10 pt20 bgf'>
     <view class='fz16 col0'>课程介绍</view>
-    <view class='pt10 fz14 col6'> 这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人     </view>
-    <view class='pt15 pb15 tc col9 fz16'>查看更点多</view>
+    <view class='pt10 fz14 col6'>{{ courseInfo.courseDesc }}</view>
   </view>
   <view class='pl10 pr10 mt15 bgf pt20 '>
     <view class='fz16 col0'>训练师介绍</view>
-    <view class='pt10 fz14 col6'> 这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人，这是测试，老范是个好人     </view>
-    <view class='pt15 pb15 tc col9 fz16'>查看更点多</view>
+    <view class='pt10 fz14 col6'>{{ courseInfo.trainerInfo }}</view>
   </view>
   
   <block wx:if="{{dataList.length > 0}}">
     <view class='borBox wd100 bgf mt15'>
       <view class='flex borBox pr16 pl16'>
         <view class='flex1 pt10 pb10 fz16 fw'>目录</view>
-        <view class='flex1 tr pt10 pb10 fz16 fw '>3小节</view>
+        <view class='flex1 tr pt10 pb10 fz16 fw'>{{ courseInfo.learningTimes }}小节</view>
       </view>
       <view class='mt8 borBox' wx:for="{{dataList}}" wx:key="key"  wx:for-index="index" wx:for-item="item">
       <view data-index="{{index}}" bindtap='slideToggle' class='col0 fz14 posRel'>第一步：让狗狗提起兴趣 <image src="{{index==checkedStep ? '/images/right.png' : '/images/right.png'}}" class='up-icon'></image></view>

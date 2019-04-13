@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    page: 1,
     articleList: []
   },
 
@@ -60,7 +61,22 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
+    let that = this;
+    // 显示加载图标
+    wx.showLoading({
+      title: '玩命加载中',
+    });
 
+    let page = that.data.page;
+    userApi.getCollectArticles(page + 1).then(r => {
+      // 追加数组
+      that.setData({
+        page: page + 1,
+        articleList: [...that.data.articleList, ...r.data.articles]
+      });
+      // 隐藏加载框
+      wx.hideLoading();
+    })
   },
 
   /**
@@ -68,5 +84,11 @@ Page({
    */
   onShareAppMessage: function() {
 
-  }
+  },
+  bindviewDetail: function(e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../articleDetail/articleDetail?id=' + id
+    })
+  },
 })

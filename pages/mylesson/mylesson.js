@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    page: 1,
     lessonList: []
   },
 
@@ -67,7 +68,29 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
+    let that = this;
+    // 显示加载图标
+    wx.showLoading({
+      title: '玩命加载中',
+    });
 
+    let page = that.data.page;
+    apiUser.getUserLesson(page + 1).then(r => {
+      // 新数据
+      let newList = r.data.courseInfoList;
+      newList.forEach(i => {
+        let d = new Date(i.createTime);
+        i.createTime = util.formatDate(d);
+      })
+
+      // 追加数组
+      that.setData({
+        page: page + 1,
+        lessonList: [...that.data.lessonList, ...newList]
+      });
+      // 隐藏加载框
+      wx.hideLoading();
+    })
   },
 
   /**
@@ -75,6 +98,12 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  bindViewDrill: function(e) {
+    let lessonId = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `../drill/drill?lessonId=${lessonId}`
+    })
   },
   addLesson: function() {
     wx.navigateTo({

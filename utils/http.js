@@ -2,8 +2,6 @@ const Promise = require('../libs/es6-promise.min');
 
 const host = 'http://kairuida.net.cn/dpet-core';
 
-const app = getApp();
-
 //let host = 'http://39.96.46.173/dpet-core';
 
 function requstGet(url, data) {
@@ -24,7 +22,7 @@ function requst(url, method, data = {}) {
       url: host + url,
       data: data,
       header: {
-        'x-auth-token': app.globalData.token
+        'x-auth-token': wx.getStorageSync('token')
       },
       method: data.method.toUpperCase(), // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res) {
